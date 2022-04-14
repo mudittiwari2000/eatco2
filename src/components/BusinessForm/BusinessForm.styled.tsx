@@ -2,6 +2,7 @@ import theme from '@app/theme'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { rem } from 'polished'
+import { ContainedButton } from '../Button'
 
 export const StyledBusinessForm = styled.div`
   min-height: 100vh;
@@ -15,10 +16,19 @@ export const StyledBusinessForm = styled.div`
 export const StyledBusinessFormCard = styled.div`
   max-width: ${rem('709px')};
   width: 100%;
-  padding: ${rem('56px')} ${rem('119px')};
+  padding: ${rem('56px')} 0;
   background-color: #fff;
   box-shadow: 0px 3px 20px #0000001a;
   border-radius: ${rem('20px')};
+`
+
+export const StyledBusinessFormCardContent = styled.div`
+  max-width: ${rem('471px')};
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 export const StyledBusinessFormStepsContainer = styled.div`
@@ -94,4 +104,19 @@ export const StyledBusinessFormStepText = styled('p', {
     css`
       color: #959597;
     `}
+`
+
+export const StyledBusinessFormFieldLabel = styled.label`
+  margin-bottom: ${rem('6px')};
+  font-family: ${theme.typography.fontFamily};
+  font-weight: 600;
+  font-size: ${rem('18px')};
+  line-height: ${rem('24px')};
+  color: #333333;
+`
+
+export const StyledBusinessFormContinueButton = styled(ContainedButton)`
+  &&& {
+    width: 100%;
+  }
 `

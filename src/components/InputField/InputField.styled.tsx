@@ -35,10 +35,12 @@ export const StyledContainedInputField = styled(InputBase)(({ theme }) => ({
 
 export const StyledUnderlinedInputField = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
-    borderRadius: 10,
+    borderRadius: 0,
     position: 'relative',
     backgroundColor: '#FFF',
     border: '1px solid #1DAF9E',
+    borderWidth: 0,
+    borderBottomWidth: '1px',
     fontSize: 20,
     lineHeight: 26,
     width: '100%',

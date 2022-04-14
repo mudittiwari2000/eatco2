@@ -6,12 +6,12 @@ import {
   StyledSelectOptionContainer,
   StyledSelectOptionIconContainer,
   StyledSelectOptionText,
-} from './RegisterSelect.styled'
+} from './BusinessFormSelect.styled'
 import { Theme, SelectProps, SelectChangeEvent } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import ENFlag from '@app/assets/svg/flags/ENFlag'
 import DAFlag from '@app/assets/svg/flags/DAFlag'
 import SVFlag from '@app/assets/svg/flags/SVFlag'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
 const useStyles = makeStyles((theme: Theme) => ({
   select: {
@@ -21,19 +21,19 @@ const useStyles = makeStyles((theme: Theme) => ({
   label: { color: theme.palette.common.black },
 }))
 
-const RegisterSelect = (props: SelectProps) => {
+const BusinessTypeSelect = (props: SelectProps) => {
   const classes = useStyles()
 
-  const [country, setCountry] = React.useState('EN')
+  const [businessType, setBusinessType] = React.useState('Restaurant')
   const handleChange = (evt: SelectChangeEvent<unknown>) => {
     const { value } = evt.target as HTMLSelectElement
-    setCountry(value)
+    setBusinessType(value)
   }
 
   return (
     <MuiSelect
-      id="sign-up--select"
-      value={country}
+      id="sign-up--business-form--business-type--select"
+      value={businessType}
       onChange={handleChange}
       input={<CustomInput />}
       classes={{
@@ -41,22 +41,50 @@ const RegisterSelect = (props: SelectProps) => {
         icon: classes.icon,
       }}
       sx={{ m: 0 }}
+      IconComponent={KeyboardArrowDownIcon}
       {...props}
     >
-      <MenuItem value={'EN'}>
+      <MenuItem value={'Restaurant'}>
         <StyledSelectOptionContainer>
-          <StyledSelectOptionIconContainer>
-            <ENFlag />
-          </StyledSelectOptionIconContainer>
-          <StyledSelectOptionText>EN</StyledSelectOptionText>
+          <StyledSelectOptionText>Restaurant</StyledSelectOptionText>
         </StyledSelectOptionContainer>
+      </MenuItem>
+    </MuiSelect>
+  )
+}
+
+interface CountrySelectProps extends SelectProps {
+  country: string
+  handleChange: (evt: SelectChangeEvent<unknown>) => void
+}
+
+const CountrySelect = (props: CountrySelectProps) => {
+  const classes = useStyles()
+
+  return (
+    <MuiSelect
+      id="sign-up--business-form--business-type--select"
+      value={props.country}
+      onChange={props.handleChange}
+      input={<CustomInput />}
+      classes={{
+        select: classes.select,
+        icon: classes.icon,
+      }}
+      sx={{ m: 0 }}
+      IconComponent={KeyboardArrowDownIcon}
+      displayEmpty
+      {...props}
+    >
+      <MenuItem value="">
+        <StyledSelectOptionText>Select Country</StyledSelectOptionText>
       </MenuItem>
       <MenuItem value={'DA'}>
         <StyledSelectOptionContainer>
           <StyledSelectOptionIconContainer>
             <DAFlag />
           </StyledSelectOptionIconContainer>
-          <StyledSelectOptionText>DA</StyledSelectOptionText>
+          <StyledSelectOptionText>Denmark</StyledSelectOptionText>
         </StyledSelectOptionContainer>
       </MenuItem>
       <MenuItem value={'SV'}>
@@ -64,11 +92,11 @@ const RegisterSelect = (props: SelectProps) => {
           <StyledSelectOptionIconContainer>
             <SVFlag />
           </StyledSelectOptionIconContainer>
-          <StyledSelectOptionText>SV</StyledSelectOptionText>
+          <StyledSelectOptionText>Sweden</StyledSelectOptionText>
         </StyledSelectOptionContainer>
       </MenuItem>
     </MuiSelect>
   )
 }
 
-export default RegisterSelect
+export { BusinessTypeSelect, CountrySelect }

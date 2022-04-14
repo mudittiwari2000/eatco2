@@ -2,7 +2,7 @@ import { SvgIcon, SvgIconProps } from '@mui/material'
 
 const SVFlag = (props: SvgIconProps) => {
   return (
-    <SvgIcon viewBox="-2 0 48 30" {...props}>
+    <SvgIcon viewBox="0 0 40 30" {...props}>
       <g
         clipPath='url("#a")'
         data-name="Mask Group 23"
