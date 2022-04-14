@@ -12,6 +12,7 @@ import {
   StyledBusinessFormStepText,
 } from './BusinessForm.styled'
 import { ChevronRight } from '@mui/icons-material'
+import theme from '@app/theme'
 
 const BusinessForm = () => {
   return (
@@ -25,7 +26,9 @@ const BusinessForm = () => {
             <StyledBusinessFormStepText>Business</StyledBusinessFormStepText>
           </StyledBusinessFormStep>
           <StyledBusinessFormLine>
-            <ChevronRight />
+            <ChevronRight
+              sx={{ color: theme.palette.common.white, fontSize: 40 }}
+            />
           </StyledBusinessFormLine>
           <StyledBusinessFormStep>
             <StyledBusinessFormStepIconContainer inactive>

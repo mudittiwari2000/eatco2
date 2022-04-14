@@ -33,6 +33,9 @@ export const StyledBusinessFormLine = styled.div`
   height: 20px;
   background: #035d621a;
   border-radius: ${rem('30px')};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export const StyledBusinessFormStep = styled('div', {
@@ -72,7 +75,7 @@ export const StyledBusinessFormStepIconContainer = styled('div', {
   ${(props) =>
     props.inactive &&
     css`
-      border: none;
+      border-color: white;
     `}
 `
 export const StyledBusinessFormStepText = styled('p', {
