@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { rem } from 'polished'
 import { ContainedButton } from '../Button'
 
-export const StyledActivation = styled.div`
+export const StyledForgotPassword = styled.div`
   min-height: 100vh;
   width: 100%;
   background-color: #f4f6f8;
@@ -12,7 +12,7 @@ export const StyledActivation = styled.div`
   align-items: center;
 `
 
-export const StyledActivationCard = styled.div`
+export const StyledForgotPasswordCard = styled.div`
   max-width: ${rem('601px')};
   width: 100%;
   padding: ${rem('24px')} 0;
@@ -22,8 +22,8 @@ export const StyledActivationCard = styled.div`
   text-align: center;
 `
 
-export const StyledActivationCardContent = styled.div`
-  max-width: ${rem('470px')};
+export const StyledForgotPasswordCardContent = styled.div`
+  max-width: ${rem('478px')};
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -31,7 +31,7 @@ export const StyledActivationCardContent = styled.div`
   justify-content: center;
 `
 
-export const StyledActivationCardHeader = styled.h2`
+export const StyledForgotPasswordCardHeader = styled.h2`
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
   font-size: ${rem('26px')};
@@ -40,7 +40,7 @@ export const StyledActivationCardHeader = styled.h2`
   color: #333333;
 `
 
-export const StyledActivationCardSubHeader = styled.h2`
+export const StyledForgotPasswordCardSubHeader = styled.h2`
   font-family: ${theme.typography.fontFamily};
   font-weight: normal;
   font-size: ${rem('20px')};
@@ -49,7 +49,7 @@ export const StyledActivationCardSubHeader = styled.h2`
   color: #333333;
 `
 
-export const StyledActivationNextButton = styled(ContainedButton)`
+export const StyledForgotPasswordNextButton = styled(ContainedButton)`
   &&& {
     width: 100%;
     max-width: ${rem('212px')};

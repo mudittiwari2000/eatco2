@@ -106,13 +106,21 @@ export const StyledBusinessFormStepText = styled('p', {
     `}
 `
 
-export const StyledBusinessFormFieldLabel = styled.label`
+export const StyledBusinessFormFieldLabel = styled('label', {
+  shouldForwardProp: (props) => props !== 'isDisabled',
+})<{ isDisabled?: boolean }>`
   margin-bottom: ${rem('6px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: 600;
   font-size: ${rem('18px')};
   line-height: ${rem('24px')};
   color: #333333;
+  text-align: left;
+  ${(props) =>
+    props.isDisabled &&
+    css`
+      opacity: 0.3;
+    `}
 `
 
 export const StyledBusinessFormContinueButton = styled(ContainedButton)`

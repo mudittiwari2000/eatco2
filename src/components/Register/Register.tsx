@@ -20,9 +20,16 @@ import theme from '@app/theme'
 import RegisterSelect from '../RegisterSelect'
 import { ContainedInputField } from '../InputField'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Register = () => {
+  const router = useRouter()
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'))
+
+  const handleFormSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
+    evt.preventDefault()
+    router.push('/register/business')
+  }
 
   return (
     <StyledRegister>
@@ -46,14 +53,30 @@ const Register = () => {
             </StyledRegisterLeftViewMainContainerSubHeader>
             <RegisterSelect />
           </Box>
-          <StyledRegisterLeftViewFieldContainer>
-            <StyledRegisterLeftViewFieldLabel htmlFor="sign-up--email">
-              Create an account*
-            </StyledRegisterLeftViewFieldLabel>
-            <ContainedInputField id="sign-up--email" placeholder="Your email" />
-          </StyledRegisterLeftViewFieldContainer>
-          <Box display="flex" sx={{ marginBottom: '25px', width: '100%' }}>
-            <ContainedButton sx={{ width: '100%' }}>JOIN US</ContainedButton>
+          <Box
+            component="form"
+            display="flex"
+            flexDirection="column"
+            justifyContent="flex-start"
+            sx={{ width: '100%' }}
+            onSubmit={handleFormSubmit}
+          >
+            <StyledRegisterLeftViewFieldContainer>
+              <StyledRegisterLeftViewFieldLabel htmlFor="sign-up--email">
+                Create an account*
+              </StyledRegisterLeftViewFieldLabel>
+              <ContainedInputField
+                required
+                type="email"
+                id="sign-up--email"
+                placeholder="Your email"
+              />
+            </StyledRegisterLeftViewFieldContainer>
+            <Box display="flex" sx={{ marginBottom: '25px', width: '100%' }}>
+              <ContainedButton type="submit" sx={{ width: '100%' }}>
+                JOIN US
+              </ContainedButton>
+            </Box>
           </Box>
           <StyledRegisterLeftViewLoginText>
             Already have an account?{' '}
