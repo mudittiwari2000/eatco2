@@ -4,6 +4,8 @@ import { Button } from '@mui/material'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import { rem } from 'polished'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 const StyledMainWrapper = styled.div`
   display: flex;
@@ -34,6 +36,12 @@ export const StyledPrimaryButton = styled(Button)<{ $isDisabled?: boolean }>`
 `
 
 const Home: NextPage = () => {
+  const router = useRouter()
+
+  useEffect(() => {
+    router.push('/register')
+  }, [router])
+
   return (
     <StyledMainWrapper>
       <Image height="59px" width="156px" alt="logo" src="/static/logo.png" />
