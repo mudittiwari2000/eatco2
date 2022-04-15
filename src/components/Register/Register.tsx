@@ -21,6 +21,7 @@ import RegisterSelect from '../RegisterSelect'
 import { ContainedInputField } from '../InputField'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { rem } from 'polished'
 
 const Register = () => {
   const router = useRouter()
@@ -44,9 +45,10 @@ const Register = () => {
           <Box
             component="div"
             display="flex"
+            flexDirection={isMdUp ? 'row' : 'column'}
             justifyContent="space-between"
             alignItems="flex-start"
-            sx={{ width: '100%' }}
+            sx={{ width: '100%', mb: rem('48px') }}
           >
             <StyledRegisterLeftViewMainContainerSubHeader>
               Get started for free

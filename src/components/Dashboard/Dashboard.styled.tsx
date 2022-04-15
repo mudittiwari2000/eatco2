@@ -10,6 +10,11 @@ export const StyledDashboard = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${theme.breakpoints.down('md')} {
+    justify-content: stretch;
+    align-items: stretch;
+  }
 `
 
 export const StyledDashboardCard = styled.div`
@@ -20,15 +25,22 @@ export const StyledDashboardCard = styled.div`
   box-shadow: 0px 3px 20px #0000001a;
   border-radius: ${rem('20px')};
   text-align: center;
+
+  ${theme.breakpoints.down('md')} {
+    border-radius: ${rem('20px')};
+  }
 `
 
 export const StyledDashboardCardContent = styled.div`
-  max-width: ${rem('478px')};
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  ${theme.breakpoints.down('md')} {
+    height: 100%;
+  }
 `
 
 export const StyledDashboardCardHeader = styled.h2`
@@ -40,17 +52,9 @@ export const StyledDashboardCardHeader = styled.h2`
   color: #333333;
 `
 
-export const StyledDashboardCardSubHeader = styled.h2`
-  font-family: ${theme.typography.fontFamily};
-  font-weight: normal;
-  font-size: ${rem('20px')};
-  line-height: ${rem('30px')};
-  margin-bottom: ${rem('42px')};
-  color: #333333;
-`
-
-export const StyledDashboardNextButton = styled(ContainedButton)`
+export const StyledDashboardGoBackButton = styled(ContainedButton)`
   &&& {
+    white-space: nowrap;
     width: 100%;
     max-width: ${rem('212px')};
     margin: 0 auto;

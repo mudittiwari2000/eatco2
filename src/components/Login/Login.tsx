@@ -75,7 +75,9 @@ const Login = () => {
               />
             </StyledLoginLeftViewFieldContainer>
             <Box display="flex" sx={{ marginBottom: '25px', width: '100%' }}>
-              <ContainedButton sx={{ width: '100%' }}>SIGN IN</ContainedButton>
+              <ContainedButton sx={{ width: '100%' }} type="submit">
+                SIGN IN
+              </ContainedButton>
             </Box>
           </Box>
           <StyledLoginLeftViewTextButtons>

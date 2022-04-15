@@ -60,12 +60,13 @@ interface CountrySelectProps extends SelectProps {
 
 const CountrySelect = (props: CountrySelectProps) => {
   const classes = useStyles()
+  const { handleChange, ...selectProps } = props
 
   return (
     <MuiSelect
       id="sign-up--business-form--business-type--select"
       value={props.country}
-      onChange={props.handleChange}
+      onChange={handleChange}
       input={<CustomInput />}
       classes={{
         select: classes.select,
@@ -74,7 +75,7 @@ const CountrySelect = (props: CountrySelectProps) => {
       sx={{ m: 0 }}
       IconComponent={KeyboardArrowDownIcon}
       displayEmpty
-      {...props}
+      {...selectProps}
     >
       <MenuItem value="">
         <StyledSelectOptionText>Select Country</StyledSelectOptionText>

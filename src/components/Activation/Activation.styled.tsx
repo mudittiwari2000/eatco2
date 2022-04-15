@@ -10,6 +10,11 @@ export const StyledActivation = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${theme.breakpoints.down('md')} {
+    justify-content: stretch;
+    align-items: stretch;
+  }
 `
 
 export const StyledActivationCard = styled.div`
@@ -20,15 +25,26 @@ export const StyledActivationCard = styled.div`
   box-shadow: 0px 3px 20px #0000001a;
   border-radius: ${rem('20px')};
   text-align: center;
+
+  ${theme.breakpoints.down('md')} {
+    padding: ${rem('24px')} ${rem('16px')};
+    border-radius: 0;
+  }
 `
 
 export const StyledActivationCardContent = styled.div`
   max-width: ${rem('470px')};
+  padding: 0;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  ${theme.breakpoints.down('md')} {
+    padding: 0 ${rem('12px')};
+    height: 100%;
+  }
 `
 
 export const StyledActivationCardHeader = styled.h2`
@@ -47,6 +63,22 @@ export const StyledActivationCardSubHeader = styled.h2`
   line-height: ${rem('30px')};
   margin-bottom: ${rem('42px')};
   color: #333333;
+`
+
+export const StyledActivationSuccessCircle = styled.div`
+  width: ${rem('60px')};
+  height: ${rem('60px')};
+  background-color: rgba(3, 93, 98, 0.05);
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+  }
 `
 
 export const StyledActivationNextButton = styled(ContainedButton)`

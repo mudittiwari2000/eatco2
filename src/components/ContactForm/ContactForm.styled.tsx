@@ -11,6 +11,11 @@ export const StyledContactForm = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${theme.breakpoints.down('md')} {
+    justify-content: stretch;
+    align-items: stretch;
+  }
 `
 
 export const StyledContactFormCard = styled.div`
@@ -77,6 +82,7 @@ export const StyledContactFormStepIconContainer = styled('div', {
     props.inactive &&
     css`
       border-color: transparent;
+      cursor: pointer;
     `}
 `
 export const StyledContactFormStepText = styled('p', {

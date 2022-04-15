@@ -34,18 +34,18 @@ export const StyledContainedInputField = styled(InputBase)(({ theme }) => ({
 }))
 
 export const StyledUnderlinedInputField = styled(InputBase)(({ theme }) => ({
+  border: '1px solid #1DAF9E',
+  borderWidth: 0,
+  borderBottomWidth: '1px',
+  backgroundColor: '#FFF',
+  transition: theme.transitions.create(['border-color', 'background-color']),
   '& .MuiInputBase-input': {
     borderRadius: 0,
     position: 'relative',
-    backgroundColor: '#FFF',
-    border: '1px solid #1DAF9E',
-    borderWidth: 0,
-    borderBottomWidth: '1px',
     fontSize: 20,
     lineHeight: 26,
     width: '100%',
     padding: '16px 22px',
-    transition: theme.transitions.create(['border-color', 'background-color']),
     color: '#13253d',
     fontFamily: [
       'Assistant',
@@ -60,9 +60,9 @@ export const StyledUnderlinedInputField = styled(InputBase)(({ theme }) => ({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
-    '&:focus': {
-      backgroundColor: '#F7F7F7',
-      borderColor: 'transparent',
-    },
+  },
+  '&:focus-within': {
+    backgroundColor: '#F7F7F7',
+    borderColor: 'transparent',
   },
 }))

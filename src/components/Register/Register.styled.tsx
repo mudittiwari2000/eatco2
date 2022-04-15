@@ -59,7 +59,7 @@ export const StyledRegisterLeftViewMainContainerHeader = styled.h2`
 export const StyledRegisterLeftViewMainContainerSubHeader = styled.h4`
   width: 100%;
   margin: 0;
-  margin-bottom: ${rem('60px')};
+  margin-bottom: ${rem('12px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
   font-size: ${rem('30px')};

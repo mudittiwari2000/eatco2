@@ -23,7 +23,8 @@ export const StyledForgotPasswordCard = styled.div`
 `
 
 export const StyledForgotPasswordCardContent = styled.div`
-  max-width: ${rem('478px')};
+  max-width: ${rem('470px')};
+  padding: 0 ${rem('12px')};
   width: 100%;
   margin: 0 auto;
   display: flex;

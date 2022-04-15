@@ -5,6 +5,7 @@ import {
   StyledActivationCardContent,
   StyledActivationCardHeader,
   StyledActivationNextButton,
+  StyledActivationSuccessCircle,
 } from './Activation.styled'
 import PinInput from '../PinInput'
 import { Code } from '../PinInput/PinInput'
@@ -12,6 +13,8 @@ import { Box, Checkbox, debounce, FormControlLabel } from '@mui/material'
 import { StyledBusinessFormFieldLabel } from '../BusinessForm/BusinessForm.styled'
 import { UnderlinedInputField } from '../InputField/InputField'
 import { useRouter } from 'next/router'
+import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined'
+import theme from '@app/theme'
 
 const isDisabledSx = (disabled: boolean) => ({
   opacity: disabled ? 0.3 : 1,
@@ -79,14 +82,31 @@ const Activation = () => {
       <StyledActivationCard>
         <StyledActivationCardContent>
           <StyledActivationCardHeader>
-            Activation code
+            {codeSuccess ? 'Activation Successful' : 'Activation Code'}
           </StyledActivationCardHeader>
-          <PinInput
-            codes={code}
-            handleChange={handleCodeChange}
-            handleFocus={handleCodeFocus}
-            success={codeSuccess}
-          />
+          {codeSuccess ? (
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              mb="41px"
+            >
+              <StyledActivationSuccessCircle>
+                <Box className="icon">
+                  <CheckOutlinedIcon
+                    sx={{ fill: theme.palette.primary.dark }}
+                  />
+                </Box>
+              </StyledActivationSuccessCircle>
+            </Box>
+          ) : (
+            <PinInput
+              codes={code}
+              handleChange={handleCodeChange}
+              handleFocus={handleCodeFocus}
+              success={codeSuccess}
+            />
+          )}
           <Box
             component="form"
             display="flex"

@@ -19,13 +19,19 @@ import theme from '@app/theme'
 import { BusinessTypeSelect } from '../BusinessFormSelect'
 import { CountrySelect } from '../BusinessFormSelect/BusinessFormSelect'
 import { UnderlinedInputField } from '../InputField/InputField'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const BusinessForm = () => {
+  const router = useRouter()
   const [country, setCountry] = React.useState('')
   const handleCountryChange = (evt: SelectChangeEvent<unknown>) => {
     const { value } = evt.target as HTMLSelectElement
     setCountry(value)
+  }
+
+  const handleFormSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
+    evt.preventDefault()
+    router.push('/register/contact')
   }
 
   return (
@@ -53,7 +59,12 @@ const BusinessForm = () => {
               </StyledBusinessFormStepText>
             </StyledBusinessFormStep>
           </StyledBusinessFormStepsContainer>
-          <Box display="flex" flexDirection="column">
+          <Box
+            component="form"
+            onSubmit={handleFormSubmit}
+            display="flex"
+            flexDirection="column"
+          >
             <Box
               display="flex"
               flexDirection="column"
@@ -73,6 +84,7 @@ const BusinessForm = () => {
                 Country*
               </StyledBusinessFormFieldLabel>
               <CountrySelect
+                required
                 country={country}
                 handleChange={handleCountryChange}
               />
@@ -86,7 +98,11 @@ const BusinessForm = () => {
                 <StyledBusinessFormFieldLabel>
                   CVR*
                 </StyledBusinessFormFieldLabel>
-                <UnderlinedInputField placeholder="------" />
+                <UnderlinedInputField
+                  required
+                  inputProps={{ minLength: 8 }}
+                  placeholder="------"
+                />
               </Box>
             )}
             {!!country && (
@@ -98,17 +114,16 @@ const BusinessForm = () => {
                 <StyledBusinessFormFieldLabel>
                   Registered Business Name*
                 </StyledBusinessFormFieldLabel>
-                <UnderlinedInputField placeholder="EatCO2" />
+                <UnderlinedInputField required placeholder="EatCO2" />
               </Box>
             )}
-          </Box>
-          <Link passHref href="/register/contact">
             <StyledBusinessFormContinueButton
               sx={{ marginTop: !!country ? '60px' : '290px' }}
+              type="submit"
             >
               CONTINUE
             </StyledBusinessFormContinueButton>
-          </Link>
+          </Box>
         </StyledBusinessFormCardContent>
       </StyledBusinessFormCard>
     </StyledBusinessForm>

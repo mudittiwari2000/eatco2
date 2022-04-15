@@ -11,6 +11,11 @@ export const StyledBusinessForm = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${theme.breakpoints.down('md')} {
+    justify-content: stretch;
+    align-items: stretch;
+  }
 `
 
 export const StyledBusinessFormCard = styled.div`
@@ -20,10 +25,16 @@ export const StyledBusinessFormCard = styled.div`
   background-color: #fff;
   box-shadow: 0px 3px 20px #0000001a;
   border-radius: ${rem('20px')};
+
+  ${theme.breakpoints.down('md')} {
+    padding: ${rem('56px')} ${rem('18px')};
+    border-radius: 0;
+  }
 `
 
 export const StyledBusinessFormCardContent = styled.div`
-  max-width: ${rem('471px')};
+  max-width: ${rem('470px')};
+  padding: 0 ${rem('12px')};
   width: 100%;
   margin: 0 auto;
   display: flex;
