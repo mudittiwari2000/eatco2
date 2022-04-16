@@ -36,7 +36,6 @@ const PinInput = (props: Props) => {
           name="code1"
           type="text"
           autoComplete="off"
-          className="codeInput"
           value={props.codes.code1}
           onChange={(e) => props.handleChange('code1', e)}
           tabIndex={1}
@@ -48,7 +47,6 @@ const PinInput = (props: Props) => {
           name="code2"
           type="text"
           autoComplete="off"
-          className="codeInput"
           value={props.codes.code2}
           onChange={(e) => props.handleChange('code2', e)}
           tabIndex={2}
@@ -60,7 +58,6 @@ const PinInput = (props: Props) => {
           name="code3"
           type="text"
           autoComplete="off"
-          className="codeInput"
           value={props.codes.code3}
           onChange={(e) => props.handleChange('code3', e)}
           tabIndex={3}
@@ -77,7 +74,6 @@ const PinInput = (props: Props) => {
           name="code4"
           type="text"
           autoComplete="off"
-          className="codeInput"
           value={props.codes.code4}
           onChange={(e) => props.handleChange('code4', e)}
           tabIndex={4}
@@ -89,7 +85,6 @@ const PinInput = (props: Props) => {
           name="code5"
           type="text"
           autoComplete="off"
-          className="codeInput"
           value={props.codes.code5}
           onChange={(e) => props.handleChange('code5', e)}
           tabIndex={5}
@@ -101,7 +96,6 @@ const PinInput = (props: Props) => {
           name="code6"
           type="text"
           autoComplete="off"
-          className="codeInput"
           value={props.codes.code6}
           onChange={(e) => props.handleChange('code6', e)}
           tabIndex={6}

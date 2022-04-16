@@ -23,17 +23,9 @@ const useStyles = makeStyles((theme: Theme) => ({
 const BusinessTypeSelect = (props: SelectProps) => {
   const classes = useStyles()
 
-  const [businessType, setBusinessType] = React.useState('Restaurant')
-  const handleChange = (evt: SelectChangeEvent<unknown>) => {
-    const { value } = evt.target as HTMLSelectElement
-    setBusinessType(value)
-  }
-
   return (
     <MuiSelect
       id="sign-up--business-form--business-type--select"
-      value={businessType}
-      onChange={handleChange}
       input={<CustomInput />}
       classes={{
         select: classes.select,

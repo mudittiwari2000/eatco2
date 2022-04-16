@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { rem } from 'polished'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { observer } from 'mobx-react-lite'
 
 const StyledMainWrapper = styled.div`
   display: flex;
@@ -50,4 +51,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default observer(Home)
