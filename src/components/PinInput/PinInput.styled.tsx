@@ -24,7 +24,7 @@ export const StyledPinInputFormContent = styled.div`
 export const StyledPinInputField = styled('input', {
   shouldForwardProp: (prop) => prop !== 'success',
 })<{ success: boolean | null }>`
-  width: ${rem('32px')};
+  width: ${rem('40px')};
   text-align: center;
   padding: ${rem('6px')};
   margin: ${rem('8px')};
@@ -35,8 +35,13 @@ export const StyledPinInputField = styled('input', {
   font-size: ${rem('24px')};
   line-height: ${rem('32px')};
   font-weight: bold;
+  transition: ${(theme.transitions.create(['border']), { duration: 150 })};
 
-  transition: border 150ms ease-out;
+  &:focus {
+    outline: none;
+    border-width: 2px;
+  }
+
   ${(props) =>
     props.success === false
       ? css`

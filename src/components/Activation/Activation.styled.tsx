@@ -1,6 +1,6 @@
 import theme from '@app/theme'
+import { toRem } from '@app/utils'
 import styled from '@emotion/styled'
-import { rem } from 'polished'
 import { ContainedButton } from '../Button'
 
 export const StyledActivation = styled.div`
@@ -18,22 +18,23 @@ export const StyledActivation = styled.div`
 `
 
 export const StyledActivationCard = styled.div`
-  max-width: ${rem('601px')};
+  max-width: ${toRem('601px')};
   width: 100%;
-  padding: ${rem('24px')} 0;
+  padding: ${toRem('24px')} 0;
   background-color: #fff;
   box-shadow: 0px 3px 20px #0000001a;
-  border-radius: ${rem('20px')};
+  border-radius: ${toRem('20px')};
   text-align: center;
 
   ${theme.breakpoints.down('md')} {
-    padding: ${rem('24px')} ${rem('16px')};
+    max-width: none;
+    padding: ${toRem('24px')} ${toRem('16px')};
     border-radius: 0;
   }
 `
 
 export const StyledActivationCardContent = styled.div`
-  max-width: ${rem('470px')};
+  max-width: ${toRem('470px')};
   padding: 0;
   width: 100%;
   margin: 0 auto;
@@ -42,7 +43,7 @@ export const StyledActivationCardContent = styled.div`
   justify-content: center;
 
   ${theme.breakpoints.down('md')} {
-    padding: 0 ${rem('12px')};
+    padding: 0 ${toRem('12px')};
     height: 100%;
   }
 `
@@ -50,24 +51,15 @@ export const StyledActivationCardContent = styled.div`
 export const StyledActivationCardHeader = styled.h2`
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${rem('26px')};
-  line-height: ${rem('34px')};
-  margin-bottom: ${rem('28px')};
-  color: #333333;
-`
-
-export const StyledActivationCardSubHeader = styled.h2`
-  font-family: ${theme.typography.fontFamily};
-  font-weight: normal;
-  font-size: ${rem('20px')};
-  line-height: ${rem('30px')};
-  margin-bottom: ${rem('42px')};
+  font-size: ${toRem('24px')};
+  line-height: ${toRem('32px')};
+  margin-bottom: ${toRem('20px')};
   color: #333333;
 `
 
 export const StyledActivationSuccessCircle = styled.div`
-  width: ${rem('60px')};
-  height: ${rem('60px')};
+  width: ${toRem('60px')};
+  height: ${toRem('60px')};
   background-color: rgba(3, 93, 98, 0.05);
   border-radius: 50%;
   position: relative;
@@ -84,8 +76,8 @@ export const StyledActivationSuccessCircle = styled.div`
 export const StyledActivationNextButton = styled(ContainedButton)`
   &&& {
     width: 100%;
-    max-width: ${rem('212px')};
+    max-width: ${toRem('212px')};
     margin: 0 auto;
-    margin-bottom: ${rem('24px')};
+    margin-bottom: ${toRem('24px')};
   }
 `

@@ -40,6 +40,7 @@ export const CustomInput = muiStyled(InputBase)(({ theme }) => ({
 
 export const StyledSelectOptionContainer = styled.div`
   display: flex;
+  align-items: center;
 `
 
 export const StyledSelectOptionIconContainer = styled.div`

@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material'
+import { createTheme, responsiveFontSizes } from '@mui/material'
 import breakpoints from './breakpoints'
 import palette from './palette'
 import typography from './typography'
@@ -17,4 +17,4 @@ const theme = createTheme({
   },
 })
 
-export default theme
+export default responsiveFontSizes(theme)

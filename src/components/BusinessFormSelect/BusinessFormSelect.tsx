@@ -9,9 +9,8 @@ import {
 } from './BusinessFormSelect.styled'
 import { Theme, SelectProps, SelectChangeEvent } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import DAFlag from '@app/assets/svg/flags/DAFlag'
-import SVFlag from '@app/assets/svg/flags/SVFlag'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import Image from 'next/image'
 
 const useStyles = makeStyles((theme: Theme) => ({
   select: {
@@ -49,6 +48,16 @@ const BusinessTypeSelect = (props: SelectProps) => {
           <StyledSelectOptionText>Restaurant</StyledSelectOptionText>
         </StyledSelectOptionContainer>
       </MenuItem>
+      <MenuItem value={'Caterer'}>
+        <StyledSelectOptionContainer>
+          <StyledSelectOptionText>Caterer</StyledSelectOptionText>
+        </StyledSelectOptionContainer>
+      </MenuItem>
+      <MenuItem value={'Private Company'}>
+        <StyledSelectOptionContainer>
+          <StyledSelectOptionText>Private Company</StyledSelectOptionText>
+        </StyledSelectOptionContainer>
+      </MenuItem>
     </MuiSelect>
   )
 }
@@ -78,20 +87,30 @@ const CountrySelect = (props: CountrySelectProps) => {
       {...selectProps}
     >
       <MenuItem value="">
-        <StyledSelectOptionText>Select Country</StyledSelectOptionText>
+        <StyledSelectOptionText disabled>Select Country</StyledSelectOptionText>
       </MenuItem>
       <MenuItem value={'DA'}>
         <StyledSelectOptionContainer>
           <StyledSelectOptionIconContainer>
-            <DAFlag />
+            <Image
+              src="/static/business-form--country-select--da.png"
+              height={30}
+              width={30}
+              alt="Denmark Flag"
+            />
           </StyledSelectOptionIconContainer>
           <StyledSelectOptionText>Denmark</StyledSelectOptionText>
         </StyledSelectOptionContainer>
       </MenuItem>
-      <MenuItem value={'SV'}>
+      <MenuItem value={'SE'}>
         <StyledSelectOptionContainer>
           <StyledSelectOptionIconContainer>
-            <SVFlag />
+            <Image
+              src="/static/business-form--country-select--se.png"
+              height={30}
+              width={30}
+              alt="Sweden Flag"
+            />
           </StyledSelectOptionIconContainer>
           <StyledSelectOptionText>Sweden</StyledSelectOptionText>
         </StyledSelectOptionContainer>

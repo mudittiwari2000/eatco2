@@ -48,8 +48,8 @@ export const StyledLoginLeftViewMainContainerHeader = styled.h2`
   margin: 0;
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${rem('45px')};
-  line-height: ${rem('59px')};
+  font-size: ${rem('36px')};
+  line-height: ${rem('48px')};
   color: ${theme.palette.primary.dark};
   white-space: nowrap;
   text-align: left;
@@ -58,11 +58,11 @@ export const StyledLoginLeftViewMainContainerHeader = styled.h2`
 export const StyledLoginLeftViewMainContainerSubHeader = styled.h4`
   width: 100%;
   margin: 0;
-  margin-bottom: ${rem('32px')};
+  margin-bottom: ${rem('22px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${rem('30px')};
-  line-height: ${rem('40px')};
+  font-size: ${rem('26px')};
+  line-height: ${rem('36px')};
   color: ${theme.palette.primary.main};
   white-space: nowrap;
   text-align: left;
@@ -78,12 +78,16 @@ export const StyledLoginLeftViewFieldContainer = styled('div', {
 `
 
 export const StyledLoginLeftViewFieldLabel = styled.label`
-  margin-bottom: ${rem('6px')};
+  margin-bottom: ${rem('4px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: 600;
-  font-size: ${rem('18px')};
-  line-height: ${rem('24px')};
+  font-size: ${rem('16px')};
+  line-height: ${rem('22px')};
   color: #333333;
+
+  span {
+    color: ${theme.palette.primary.light};
+  }
 `
 
 export const StyledLoginLeftViewTextButtons = styled.p`
@@ -94,8 +98,8 @@ export const StyledLoginLeftViewTextButtons = styled.p`
     text-decoration: none;
     color: ${theme.palette.primary.main};
     font-family: ${theme.typography.fontFamily};
-    font-size: ${rem('20px')};
-    line-height: ${rem('26px')};
+    font-size: ${rem('18px')};
+    line-height: ${rem('24px')};
     font-weight: 600;
     transition: color 150ms ease-out;
 

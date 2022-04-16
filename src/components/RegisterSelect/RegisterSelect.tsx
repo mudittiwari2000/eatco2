@@ -59,12 +59,12 @@ const RegisterSelect = (props: SelectProps) => {
           <StyledSelectOptionText>DA</StyledSelectOptionText>
         </StyledSelectOptionContainer>
       </MenuItem>
-      <MenuItem value={'SV'}>
+      <MenuItem value={'SE'}>
         <StyledSelectOptionContainer>
           <StyledSelectOptionIconContainer>
             <SVFlag />
           </StyledSelectOptionIconContainer>
-          <StyledSelectOptionText>SV</StyledSelectOptionText>
+          <StyledSelectOptionText>SE</StyledSelectOptionText>
         </StyledSelectOptionContainer>
       </MenuItem>
     </MuiSelect>

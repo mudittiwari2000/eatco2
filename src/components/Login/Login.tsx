@@ -53,7 +53,7 @@ const Login = () => {
           >
             <StyledLoginLeftViewFieldContainer>
               <StyledLoginLeftViewFieldLabel htmlFor="sign-up--email">
-                Email*
+                Email<span>*</span>
               </StyledLoginLeftViewFieldLabel>
               <ContainedInputField
                 required
@@ -64,7 +64,7 @@ const Login = () => {
             </StyledLoginLeftViewFieldContainer>
             <StyledLoginLeftViewFieldContainer password>
               <StyledLoginLeftViewFieldLabel htmlFor="sign-up--email">
-                Password*
+                Password<span>*</span>
               </StyledLoginLeftViewFieldLabel>
               <ContainedInputField
                 required
