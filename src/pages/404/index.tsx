@@ -28,7 +28,7 @@ const StyledGoBackLink = styled.p`
   }
 `
 
-const custom404 = () => {
+const Custom404 = () => {
   return (
     <Styled404Wrapper>
       <StyledText>Oops! page not found</StyledText>
@@ -40,4 +40,4 @@ const custom404 = () => {
   )
 }
 
-export default custom404
+export default Custom404

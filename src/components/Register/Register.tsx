@@ -22,10 +22,19 @@ import { ContainedInputField } from '../InputField'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { rem } from 'polished'
+import { useStore } from '@app/store'
+import { observer } from 'mobx-react-lite'
 
 const Register = () => {
+  const { registerStore } = useStore()
   const router = useRouter()
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'))
+
+  const handleEmailField = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    registerStore.setEmail(e.target.value)
+  }
 
   const handleFormSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
@@ -45,7 +54,6 @@ const Register = () => {
           <Box
             component="div"
             display="flex"
-            flexDirection={isMdUp ? 'row' : 'column'}
             justifyContent="space-between"
             alignItems="center"
             sx={{ width: '100%', mb: rem('48px') }}
@@ -72,6 +80,8 @@ const Register = () => {
                 type="email"
                 id="sign-up--email"
                 placeholder="Your email"
+                value={registerStore.email}
+                onChange={handleEmailField}
               />
             </StyledRegisterLeftViewFieldContainer>
             <Box display="flex" sx={{ marginBottom: '25px', width: '100%' }}>
@@ -104,4 +114,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default observer(Register)

@@ -20,11 +20,30 @@ import { BusinessTypeSelect } from '../BusinessFormSelect'
 import { CountrySelect } from '../BusinessFormSelect/BusinessFormSelect'
 import { UnderlinedInputField } from '../InputField/InputField'
 import { useRouter } from 'next/router'
-import type { Country } from '@app/store/registerStore'
+import type { BusinessType, Country } from '@app/store/registerStore'
+import { useStore } from '@app/store'
+import { observer } from 'mobx-react-lite'
 
 const BusinessForm = () => {
   const router = useRouter()
-  const [country, setCountry] = React.useState<Country>('')
+  const {
+    registerStore: {
+      country,
+      setCountry,
+      businessType,
+      setBusinessType,
+      cvr,
+      setCvr,
+      registeredBusinessName,
+      setRegisteredBusinessName,
+    },
+  } = useStore()
+
+  const handleBusinessTypeChange = (evt: SelectChangeEvent<unknown>) => {
+    const { value } = evt.target as HTMLSelectElement
+    setBusinessType(value as BusinessType)
+  }
+
   const handleCountryChange = (evt: SelectChangeEvent<unknown>) => {
     const { value } = evt.target as HTMLSelectElement
     setCountry(value as Country)
@@ -51,7 +70,10 @@ const BusinessForm = () => {
                 sx={{ color: theme.palette.common.white, fontSize: 40 }}
               />
             </StyledBusinessFormLine>
-            <StyledBusinessFormStep>
+            <StyledBusinessFormStep
+              onClick={() => router.push('/register/contact')}
+              style={{ cursor: 'pointer' }}
+            >
               <StyledBusinessFormStepIconContainer inactive>
                 <UserIcon />
               </StyledBusinessFormStepIconContainer>
@@ -74,7 +96,10 @@ const BusinessForm = () => {
               <StyledBusinessFormFieldLabel>
                 Business Type<span>*</span>
               </StyledBusinessFormFieldLabel>
-              <BusinessTypeSelect />
+              <BusinessTypeSelect
+                value={businessType}
+                onChange={handleBusinessTypeChange}
+              />
             </Box>
             <Box
               display="flex"
@@ -104,6 +129,8 @@ const BusinessForm = () => {
                   required
                   inputProps={{ minLength: 8 }}
                   placeholder="------"
+                  value={cvr}
+                  onChange={(evt) => setCvr(evt.target.value)}
                 />
               </Box>
             )}
@@ -116,7 +143,14 @@ const BusinessForm = () => {
                 <StyledBusinessFormFieldLabel>
                   Registered Business Name<span>*</span>
                 </StyledBusinessFormFieldLabel>
-                <UnderlinedInputField required placeholder="EatCO2" />
+                <UnderlinedInputField
+                  required
+                  placeholder="EatCO2"
+                  value={registeredBusinessName}
+                  onChange={(evt) =>
+                    setRegisteredBusinessName(evt.target.value)
+                  }
+                />
               </Box>
             )}
             <StyledBusinessFormContinueButton
@@ -131,4 +165,4 @@ const BusinessForm = () => {
     </StyledBusinessForm>
   )
 }
-export default BusinessForm
+export default observer(BusinessForm)

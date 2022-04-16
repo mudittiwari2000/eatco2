@@ -1,11 +1,11 @@
 import { makeAutoObservable, runInAction } from 'mobx'
 
-export type BusinessType = 'Restaurant' | 'Caterer' | 'Private Company' | ''
+export type BusinessType = 'Restaurant' | 'Caterer' | 'Private Company'
 export type Country = 'DA' | 'SE' | ''
 
 export default class RegisterStore {
   email = ''
-  businessType: BusinessType = ''
+  businessType: BusinessType = 'Restaurant'
   country: Country = ''
   cvr = ''
   registeredBusinessName = ''
@@ -13,49 +13,49 @@ export default class RegisterStore {
   zip = ''
   city = ''
 
-  setEmail(email: string) {
+  setEmail = (email: string) => {
     runInAction(() => {
       this.email = email
     })
   }
 
-  setBusinessType(businessType: BusinessType) {
+  setBusinessType = (businessType: BusinessType) => {
     runInAction(() => {
       this.businessType = businessType
     })
   }
 
-  setCountry(country: Country) {
+  setCountry = (country: Country) => {
     runInAction(() => {
       this.country = country
     })
   }
 
-  setCvr(cvr: string) {
+  setCvr = (cvr: string) => {
     runInAction(() => {
       this.cvr = cvr
     })
   }
 
-  setRegisteredBusinessName(registeredBusinessName: string) {
+  setRegisteredBusinessName = (registeredBusinessName: string) => {
     runInAction(() => {
       this.registeredBusinessName = registeredBusinessName
     })
   }
 
-  setStreetName(streetName: string) {
+  setStreetName = (streetName: string) => {
     runInAction(() => {
       this.streetName = streetName
     })
   }
 
-  setZip(zip: string) {
+  setZip = (zip: string) => {
     runInAction(() => {
       this.zip = zip
     })
   }
 
-  setCity(city: string) {
+  setCity = (city: string) => {
     runInAction(() => {
       this.city = city
     })

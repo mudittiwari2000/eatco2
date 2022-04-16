@@ -31,8 +31,11 @@ export const StyledContactFormCard = styled.div`
 export const StyledContactFormStepsContainer = styled.div`
   position: relative;
   display: flex;
+  margin: 0 auto;
   margin-bottom: ${rem('60px')};
   padding: ${rem('22px')} 0 ${rem('56px')} 0;
+  max-width: ${toRem('320px')};
+  width: 100%;
 `
 
 export const StyledContactFormLine = styled.div`

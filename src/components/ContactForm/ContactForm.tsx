@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import BusinessIcon from '@app/assets/svg/BusinessIcon'
 import {
   StyledContactForm,
@@ -26,6 +26,8 @@ import { UnderlinedInputField } from '../InputField/InputField'
 import { Box, InputAdornment, useTheme } from '@mui/material'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import { useRouter } from 'next/router'
+import { useStore } from '@app/store'
+import { observer } from 'mobx-react-lite'
 
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -38,21 +40,8 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
 
 const ContactForm = () => {
   const router = useRouter()
+  const { registerStore } = useStore()
   const theme = useTheme()
-  const [zipCode, setZipCode] = useState('12345')
-  const [city, setCity] = useState('Copenhagen')
-
-  const handleZipCodeField: React.ChangeEventHandler<
-    HTMLInputElement | HTMLTextAreaElement
-  > = (e) => {
-    setZipCode(e.target.value)
-  }
-
-  const handleCityField: React.ChangeEventHandler<
-    HTMLInputElement | HTMLTextAreaElement
-  > = (e) => {
-    setCity(e.target.value)
-  }
 
   const handleBusinessIconClick = () => {
     router.push('/register/business')
@@ -123,6 +112,10 @@ const ContactForm = () => {
                     <LocationOnIcon sx={{ mr: 1, color: '#959597' }} />
                   </InputAdornment>
                 }
+                value={registerStore.streetName}
+                onChange={(evt) =>
+                  registerStore.setStreetName(evt.target.value)
+                }
               />
             </Box>
 
@@ -134,8 +127,8 @@ const ContactForm = () => {
                 <StyledContactFormStepAddressInput
                   type="text"
                   inputMode="numeric"
-                  value={zipCode}
-                  onChange={handleZipCodeField}
+                  value={registerStore.zip}
+                  onChange={(evt) => registerStore.setZip(evt.target.value)}
                 />
               </StyledContactFormStepsAddress>
               <StyledContactFormStepsAddress border>
@@ -143,8 +136,8 @@ const ContactForm = () => {
                   City
                 </StyledContactFormStepAddressLabel>
                 <StyledContactFormStepAddressInput
-                  value={city}
-                  onChange={handleCityField}
+                  value={registerStore.city}
+                  onChange={(evt) => registerStore.setCity(evt.target.value)}
                 />
               </StyledContactFormStepsAddress>
             </StyledContactFormStepAddressBox>
@@ -160,4 +153,5 @@ const ContactForm = () => {
     </StyledContactForm>
   )
 }
-export default ContactForm
+
+export default observer(ContactForm)
