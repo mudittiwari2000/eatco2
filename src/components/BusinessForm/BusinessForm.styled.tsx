@@ -1,4 +1,5 @@
 import theme from '@app/theme'
+import { toRem } from '@app/utils'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { rem } from 'polished'
@@ -45,8 +46,11 @@ export const StyledBusinessFormCardContent = styled.div`
 export const StyledBusinessFormStepsContainer = styled.div`
   position: relative;
   display: flex;
+  margin: 0 auto;
   margin-bottom: ${rem('60px')};
   padding: ${rem('22px')} 0 ${rem('56px')} 0;
+  max-width: ${toRem('320px')};
+  width: 100%;
 `
 
 export const StyledBusinessFormLine = styled.div`
@@ -89,7 +93,7 @@ export const StyledBusinessFormStepIconContainer = styled('div', {
   background: #fff;
   border-radius: 50%;
   border: 2px solid #1daf9e;
-  padding: ${rem('16px')} ${rem('18px')} ${rem('16px')} ${rem('19px')};
+  padding: ${rem('14px')} ${rem('16px')} ${rem('14px')} ${rem('16px')};
   box-shadow: 0px 3px 10px #318fb51a;
   z-index: 2;
 
@@ -107,7 +111,10 @@ export const StyledBusinessFormStepText = styled('p', {
   margin: 0;
   margin-top: ${rem('11px')};
   text-align: center;
-  font: normal normal 600 18px/23px ${theme.typography.fontFamily};
+  font-family: ${theme.typography.fontFamily};
+  font-weight: 600;
+  font-size: ${toRem('14px')};
+  line-height: ${toRem('18px')};
   color: ${theme.palette.primary.main};
 
   ${(props) =>
@@ -123,8 +130,8 @@ export const StyledBusinessFormFieldLabel = styled('label', {
   margin-bottom: ${rem('6px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: 600;
-  font-size: ${rem('18px')};
-  line-height: ${rem('24px')};
+  font-size: ${rem('16px')};
+  line-height: ${rem('22px')};
   color: #333333;
   text-align: left;
   ${(props) =>
@@ -132,6 +139,10 @@ export const StyledBusinessFormFieldLabel = styled('label', {
     css`
       opacity: 0.3;
     `}
+
+  span {
+    color: ${theme.palette.primary.light};
+  }
 `
 
 export const StyledBusinessFormContinueButton = styled(ContainedButton)`

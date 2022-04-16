@@ -47,7 +47,7 @@ const Register = () => {
             display="flex"
             flexDirection={isMdUp ? 'row' : 'column'}
             justifyContent="space-between"
-            alignItems="flex-start"
+            alignItems="center"
             sx={{ width: '100%', mb: rem('48px') }}
           >
             <StyledRegisterLeftViewMainContainerSubHeader>

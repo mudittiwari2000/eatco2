@@ -20,13 +20,14 @@ import { BusinessTypeSelect } from '../BusinessFormSelect'
 import { CountrySelect } from '../BusinessFormSelect/BusinessFormSelect'
 import { UnderlinedInputField } from '../InputField/InputField'
 import { useRouter } from 'next/router'
+import type { Country } from '@app/store/registerStore'
 
 const BusinessForm = () => {
   const router = useRouter()
-  const [country, setCountry] = React.useState('')
+  const [country, setCountry] = React.useState<Country>('')
   const handleCountryChange = (evt: SelectChangeEvent<unknown>) => {
     const { value } = evt.target as HTMLSelectElement
-    setCountry(value)
+    setCountry(value as Country)
   }
 
   const handleFormSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
@@ -71,17 +72,17 @@ const BusinessForm = () => {
               sx={{ marginBottom: '30px' }}
             >
               <StyledBusinessFormFieldLabel>
-                Business Type*
+                Business Type<span>*</span>
               </StyledBusinessFormFieldLabel>
               <BusinessTypeSelect />
             </Box>
             <Box
               display="flex"
               flexDirection="column"
-              sx={{ marginBottom: '30px' }}
+              sx={{ marginBottom: !country ? 0 : '30px' }}
             >
               <StyledBusinessFormFieldLabel>
-                Country*
+                Country<span>*</span>
               </StyledBusinessFormFieldLabel>
               <CountrySelect
                 required
@@ -96,7 +97,8 @@ const BusinessForm = () => {
                 sx={{ marginBottom: '30px' }}
               >
                 <StyledBusinessFormFieldLabel>
-                  CVR*
+                  {country === 'SE' ? 'Organization Number' : 'CVR'}
+                  <span>*</span>
                 </StyledBusinessFormFieldLabel>
                 <UnderlinedInputField
                   required
@@ -112,13 +114,13 @@ const BusinessForm = () => {
                 sx={{ marginBottom: '30px' }}
               >
                 <StyledBusinessFormFieldLabel>
-                  Registered Business Name*
+                  Registered Business Name<span>*</span>
                 </StyledBusinessFormFieldLabel>
                 <UnderlinedInputField required placeholder="EatCO2" />
               </Box>
             )}
             <StyledBusinessFormContinueButton
-              sx={{ marginTop: !!country ? '60px' : '290px' }}
+              sx={{ marginTop: !!country ? '60px' : '148px' }}
               type="submit"
             >
               CONTINUE

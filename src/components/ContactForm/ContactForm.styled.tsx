@@ -1,4 +1,5 @@
 import theme from '@app/theme'
+import { toRem } from '@app/utils'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { InputBase } from '@mui/material'
@@ -110,7 +111,6 @@ export const StyledContactFormStepsAddress = styled('div', {
 }>`
   display: flex;
   flex-direction: column;
-  font-weight: 800;
   flex: 1;
   padding: 0 ${rem('21px')};
 
@@ -122,8 +122,11 @@ export const StyledContactFormStepsAddress = styled('div', {
 `
 
 export const StyledContactFormStepAddressLabel = styled.label`
-  color: #035d62;
-  font: normal normal 600 20px/26px Assistant;
+  color: ${theme.palette.primary.main};
+  font-family: ${theme.typography.fontFamily};
+  font-weight: 600;
+  font-size: ${toRem('16px')};
+  line-height: ${toRem('20px')};
 `
 
 export const StyledContactFormStepAddressBox = styled.div`
@@ -135,6 +138,13 @@ export const StyledContactFormStepAddressBox = styled.div`
 `
 export const StyledContactFormStepAddressInput = styled(InputBase)`
   &&& {
-    color: #1daf9e;
+    color: ${theme.palette.primary.light};
+
+    & input {
+      font-family: ${theme.typography.fontFamily};
+      font-weight: 600;
+      font-size: ${toRem('14px')};
+      line-height: ${toRem('18px')};
+    }
   }
 `

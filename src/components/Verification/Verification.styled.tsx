@@ -27,6 +27,8 @@ export const StyledVerificationCard = styled.div`
   text-align: center;
 
   ${theme.breakpoints.down('md')} {
+    max-width: none;
+    padding: ${rem('24px')} ${rem('12px')};
     border-radius: 0;
   }
 `
@@ -49,9 +51,9 @@ export const StyledVerificationCardContent = styled.div`
 export const StyledVerificationCardHeader = styled.h2`
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${rem('26px')};
-  line-height: ${rem('34px')};
-  margin-bottom: ${rem('28px')};
+  font-size: ${rem('24px')};
+  line-height: ${rem('32px')};
+  margin-bottom: ${rem('20px')};
   color: #333333;
 
   ${theme.breakpoints.down('md')} {
@@ -62,9 +64,9 @@ export const StyledVerificationCardHeader = styled.h2`
 export const StyledVerificationCardSubHeader = styled.h2`
   font-family: ${theme.typography.fontFamily};
   font-weight: normal;
-  font-size: ${rem('20px')};
-  line-height: ${rem('30px')};
-  margin-bottom: ${rem('42px')};
+  font-size: ${rem('18px')};
+  line-height: ${rem('28px')};
+  margin-bottom: ${rem('32px')};
   color: #333333;
 `
 

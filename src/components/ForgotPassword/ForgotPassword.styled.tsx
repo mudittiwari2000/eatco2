@@ -35,18 +35,9 @@ export const StyledForgotPasswordCardContent = styled.div`
 export const StyledForgotPasswordCardHeader = styled.h2`
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${rem('26px')};
-  line-height: ${rem('34px')};
-  margin-bottom: ${rem('28px')};
-  color: #333333;
-`
-
-export const StyledForgotPasswordCardSubHeader = styled.h2`
-  font-family: ${theme.typography.fontFamily};
-  font-weight: normal;
-  font-size: ${rem('20px')};
-  line-height: ${rem('30px')};
-  margin-bottom: ${rem('42px')};
+  font-size: ${rem('24px')};
+  line-height: ${rem('32px')};
+  margin-bottom: ${rem('20px')};
   color: #333333;
 `
 

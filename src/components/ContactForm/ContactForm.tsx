@@ -13,7 +13,6 @@ import {
   StyledContactFormStepAddressInput,
 } from './ContactForm.styled'
 import { ChevronRight, Done } from '@mui/icons-material'
-import theme from '@app/theme'
 import Badge, { BadgeProps } from '@mui/material/Badge'
 import { styled } from '@mui/material/styles'
 import UserActiveIcon from '@app/assets/svg/UserActiveIcon'
@@ -24,7 +23,7 @@ import {
   StyledBusinessFormFieldLabel,
 } from '../BusinessForm/BusinessForm.styled'
 import { UnderlinedInputField } from '../InputField/InputField'
-import { Box, InputAdornment } from '@mui/material'
+import { Box, InputAdornment, useTheme } from '@mui/material'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import { useRouter } from 'next/router'
 
@@ -39,6 +38,7 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
 
 const ContactForm = () => {
   const router = useRouter()
+  const theme = useTheme()
   const [zipCode, setZipCode] = useState('12345')
   const [city, setCity] = useState('Copenhagen')
 
@@ -117,10 +117,10 @@ const ContactForm = () => {
                 Street Name
               </StyledBusinessFormFieldLabel>
               <UnderlinedInputField
-                placeholder="123 main ave"
+                placeholder="type street name here ..."
                 endAdornment={
                   <InputAdornment position="end">
-                    <LocationOnIcon color="primary" sx={{ mr: 1 }} />
+                    <LocationOnIcon sx={{ mr: 1, color: '#959597' }} />
                   </InputAdornment>
                 }
               />
@@ -149,7 +149,7 @@ const ContactForm = () => {
               </StyledContactFormStepsAddress>
             </StyledContactFormStepAddressBox>
             <StyledBusinessFormContinueButton
-              sx={{ marginTop: '290px' }}
+              sx={{ marginTop: '120px' }}
               type="submit"
             >
               CONTINUE

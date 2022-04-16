@@ -10,6 +10,7 @@ import { Box } from '@mui/material'
 import { StyledBusinessFormFieldLabel } from '../BusinessForm/BusinessForm.styled'
 import { UnderlinedInputField } from '../InputField/InputField'
 import { useRouter } from 'next/router'
+import { StyledVerificationCardSubHeader } from '../Verification/Verification.styled'
 
 const ForgotPassword = () => {
   const router = useRouter()
@@ -25,6 +26,10 @@ const ForgotPassword = () => {
           <StyledForgotPasswordCardHeader>
             Forgot Password
           </StyledForgotPasswordCardHeader>
+          <StyledVerificationCardSubHeader>
+            You&apos;ll be receiving an activation code to reset your password
+            on your email
+          </StyledVerificationCardSubHeader>
           <Box component="form" onSubmit={handleFormSubmit}>
             <Box
               display="flex"
@@ -32,7 +37,7 @@ const ForgotPassword = () => {
               sx={{ marginBottom: '30px' }}
             >
               <StyledBusinessFormFieldLabel>
-                Email*
+                Email<span>*</span>
               </StyledBusinessFormFieldLabel>
               <UnderlinedInputField
                 required

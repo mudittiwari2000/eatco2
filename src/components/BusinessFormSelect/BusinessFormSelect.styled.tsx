@@ -12,15 +12,15 @@ export const CustomInput = muiStyled(InputBase)(({ theme }) => ({
     border: '1px solid #035D62',
     borderWidth: 0,
     borderBottomWidth: '1px',
-    fontSize: 16,
+    fontSize: 14,
     width: '100%',
     padding: '10px 26px 10px 12px',
     transition: theme.transitions.create(['border-color']),
     fontFamily: [
+      'Assistant',
       '-apple-system',
       'BlinkMacSystemFont',
       '"Segoe UI"',
-      'Assistant',
       'Roboto',
       '"Helvetica Neue"',
       'Arial',
@@ -38,6 +38,7 @@ export const CustomInput = muiStyled(InputBase)(({ theme }) => ({
 
 export const StyledSelectOptionContainer = styled.div`
   display: flex;
+  align-items: center;
 `
 
 export const StyledSelectOptionIconContainer = styled.div`
@@ -45,9 +46,11 @@ export const StyledSelectOptionIconContainer = styled.div`
   margin-right: ${rem('15px')};
 `
 
-export const StyledSelectOptionText = styled.p`
+export const StyledSelectOptionText = styled('p', {
+  shouldForwardProp: (prop) => prop !== 'disabled',
+})<{ disabled?: boolean }>`
   font-family: ${theme.typography.fontFamily};
   font-size: ${rem('16px')};
   line-height: ${rem('21px')};
-  color: #13253d;
+  color: ${(p) => (p.disabled ? theme.palette.grey[800] : '#13253d')};
 `

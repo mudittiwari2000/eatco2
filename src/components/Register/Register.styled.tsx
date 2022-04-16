@@ -49,8 +49,8 @@ export const StyledRegisterLeftViewMainContainerHeader = styled.h2`
   margin-bottom: ${rem('10px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${rem('45px')};
-  line-height: ${rem('59px')};
+  font-size: ${rem('36px')};
+  line-height: ${rem('38px')};
   color: ${theme.palette.primary.dark};
   white-space: nowrap;
   text-align: left;
@@ -62,8 +62,8 @@ export const StyledRegisterLeftViewMainContainerSubHeader = styled.h4`
   margin-bottom: ${rem('12px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${rem('30px')};
-  line-height: ${rem('40px')};
+  font-size: ${rem('24px')};
+  line-height: ${rem('32px')};
   color: ${theme.palette.primary.main};
   white-space: nowrap;
   text-align: left;
@@ -73,23 +73,23 @@ export const StyledRegisterLeftViewFieldContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: ${rem('50px')};
+  margin-bottom: ${rem('46px')};
 `
 
 export const StyledRegisterLeftViewFieldLabel = styled.label`
   margin-bottom: ${rem('6px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: 600;
-  font-size: ${rem('18px')};
-  line-height: ${rem('24px')};
+  font-size: ${rem('16px')};
+  line-height: ${rem('22px')};
   color: #333333;
 `
 
 export const StyledRegisterLeftViewLoginText = styled.p`
   color: #333333;
   font-family: ${theme.typography.fontFamily};
-  font-size: ${rem('20px')};
-  line-height: ${rem('26px')};
+  font-size: ${rem('18px')};
+  line-height: ${rem('22px')};
   font-weight: normal;
   text-align: left;
   width: 100%;
@@ -97,9 +97,6 @@ export const StyledRegisterLeftViewLoginText = styled.p`
   a {
     text-decoration: none;
     color: ${theme.palette.primary.main};
-    font-family: ${theme.typography.fontFamily};
-    font-size: ${rem('20px')};
-    line-height: ${rem('26px')};
     font-weight: 600;
     transition: color 150ms ease-out;
 

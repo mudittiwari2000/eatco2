@@ -7,10 +7,10 @@ export const StyledContainedInputField = styled(InputBase)(({ theme }) => ({
     position: 'relative',
     backgroundColor: '#FFF',
     border: '1px solid #1DAF9E',
-    fontSize: 20,
-    lineHeight: 26,
+    fontSize: 18,
+    lineHeight: 22,
     width: '100%',
-    padding: '16px 22px',
+    padding: '14px 20px',
     transition: theme.transitions.create(['border-color', 'background-color']),
     color: '#13253d',
     fontFamily: [
@@ -38,15 +38,24 @@ export const StyledUnderlinedInputField = styled(InputBase)(({ theme }) => ({
   borderWidth: 0,
   borderBottomWidth: '1px',
   backgroundColor: '#FFF',
-  transition: theme.transitions.create(['border-color', 'background-color']),
+  transition: theme.transitions.create([
+    'border-radius',
+    'border-color',
+    'background-color',
+  ]),
   '& .MuiInputBase-input': {
     borderRadius: 0,
     position: 'relative',
-    fontSize: 20,
-    lineHeight: 26,
+    fontSize: 16,
+    lineHeight: 19,
     width: '100%',
-    padding: '16px 22px',
+    padding: '12px 16px',
     color: '#13253d',
+    transition: theme.transitions.create([
+      'border-radius',
+      'border-color',
+      'background-color',
+    ]),
     fontFamily: [
       'Assistant',
       '-apple-system',
@@ -64,5 +73,6 @@ export const StyledUnderlinedInputField = styled(InputBase)(({ theme }) => ({
   '&:focus-within': {
     backgroundColor: '#F7F7F7',
     borderColor: 'transparent',
+    borderRadius: 10,
   },
 }))
