@@ -1,17 +1,17 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
 import PageLayout from '@app/layouts/PageLayout'
-import Dashboard from '@app/components/Dashboard'
+import Reports from '@app/components/Reports'
 import DashboardLayout from '@app/layouts/DashboardLayout'
 
-const DashboardPage = () => {
+const ReportsPage = () => {
   return (
     <PageLayout title="Dashboard">
-      <DashboardLayout title="Dashboard">
-        <Dashboard />
+      <DashboardLayout title="Reports">
+        <Reports />
       </DashboardLayout>
     </PageLayout>
   )
 }
 
-export default observer(DashboardPage)
+export default observer(ReportsPage)

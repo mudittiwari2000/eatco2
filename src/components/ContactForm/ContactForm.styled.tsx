@@ -64,7 +64,7 @@ export const StyledContactFormStep = styled('div', {
           left: 0;
         `
       : css`
-          right: 0;
+          right: -2px;
         `}
 `
 
@@ -78,14 +78,14 @@ export const StyledContactFormStepIconContainer = styled('div', {
   background: #fff;
   border-radius: 50%;
   border: 2px solid #1daf9e;
-  padding: ${rem('16px')} ${rem('18px')} ${rem('16px')} ${rem('19px')};
+  padding: ${rem('16px')};
   box-shadow: 0px 3px 10px #318fb51a;
   z-index: 2;
 
   ${(props) =>
     props.inactive &&
     css`
-      border-color: transparent;
+      border-color: ${theme.palette.grey[300]};
       cursor: pointer;
     `}
 `

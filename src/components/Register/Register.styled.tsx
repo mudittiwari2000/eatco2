@@ -88,8 +88,8 @@ export const StyledRegisterLeftViewFieldLabel = styled.label`
 export const StyledRegisterLeftViewLoginText = styled.p`
   color: #333333;
   font-family: ${theme.typography.fontFamily};
-  font-size: ${rem('18px')};
-  line-height: ${rem('22px')};
+  font-size: ${rem('16px')};
+  line-height: ${rem('20px')};
   font-weight: normal;
   text-align: left;
   width: 100%;

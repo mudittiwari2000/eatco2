@@ -100,7 +100,7 @@ export const StyledBusinessFormStepIconContainer = styled('div', {
   ${(props) =>
     props.inactive &&
     css`
-      border-color: white;
+      border-color: ${theme.palette.grey[300]};
     `}
 `
 export const StyledBusinessFormStepText = styled('p', {

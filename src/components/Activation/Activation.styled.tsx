@@ -51,8 +51,8 @@ export const StyledActivationCardContent = styled.div`
 export const StyledActivationCardHeader = styled.h2`
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${toRem('24px')};
-  line-height: ${toRem('32px')};
+  font-size: ${toRem('22px')};
+  line-height: ${toRem('30px')};
   margin-bottom: ${toRem('20px')};
   color: #333333;
 `
