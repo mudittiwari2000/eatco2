@@ -46,7 +46,7 @@ const RegisterSelect = (props: SelectProps) => {
       <MenuItem value={'EN'}>
         <StyledSelectOptionContainer>
           <StyledSelectOptionIconContainer>
-            <ENFlag />
+            <ENFlag sx={{ fontSize: 20 }} />
           </StyledSelectOptionIconContainer>
           <StyledSelectOptionText>EN</StyledSelectOptionText>
         </StyledSelectOptionContainer>
@@ -54,7 +54,7 @@ const RegisterSelect = (props: SelectProps) => {
       <MenuItem value={'DA'}>
         <StyledSelectOptionContainer>
           <StyledSelectOptionIconContainer>
-            <DAFlag />
+            <DAFlag sx={{ fontSize: 20 }} />
           </StyledSelectOptionIconContainer>
           <StyledSelectOptionText>DA</StyledSelectOptionText>
         </StyledSelectOptionContainer>
@@ -62,7 +62,7 @@ const RegisterSelect = (props: SelectProps) => {
       <MenuItem value={'SE'}>
         <StyledSelectOptionContainer>
           <StyledSelectOptionIconContainer>
-            <SVFlag />
+            <SVFlag sx={{ fontSize: 20 }} />
           </StyledSelectOptionIconContainer>
           <StyledSelectOptionText>SE</StyledSelectOptionText>
         </StyledSelectOptionContainer>

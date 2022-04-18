@@ -7,10 +7,10 @@ export const StyledContainedInputField = styled(InputBase)(({ theme }) => ({
     position: 'relative',
     backgroundColor: '#FFF',
     border: '1px solid #1DAF9E',
-    fontSize: 18,
-    lineHeight: 22,
+    fontSize: 16,
+    lineHeight: 20,
     width: '100%',
-    padding: '14px 20px',
+    padding: '12px 18px',
     transition: theme.transitions.create(['border-color', 'background-color']),
     color: '#13253d',
     fontFamily: [
