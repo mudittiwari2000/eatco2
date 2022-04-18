@@ -13,6 +13,7 @@ import {
   StyledDashboardChartSectionHeader,
   StyledDashboardChartSectionHeaderText,
   StyledDashboardChartSectionHeaderChip,
+  StyledDashboardOverviewSectionDataContainer,
 } from './Dashboard.styled'
 
 const Dashboard = () => {
@@ -26,28 +27,30 @@ const Dashboard = () => {
             <StyledDashboardOverviewSectionMainTitle>
               Overview
             </StyledDashboardOverviewSectionMainTitle>
-            <StyledDashboardOverviewSectionItem>
-              <StyledDashboardOverviewSectionItemTitle>
-                Compensation Amount
-              </StyledDashboardOverviewSectionItemTitle>
-              <StyledDashboardOverviewSectionItemText>
-                48 DEK
-                <span>
-                  +2.5% <ArrowUpward sx={{ fontSize: 10 }} />{' '}
-                </span>
-              </StyledDashboardOverviewSectionItemText>
-            </StyledDashboardOverviewSectionItem>
-            <StyledDashboardOverviewSectionItem>
-              <StyledDashboardOverviewSectionItemTitle>
-                CO2 Compensated
-              </StyledDashboardOverviewSectionItemTitle>
-              <StyledDashboardOverviewSectionItemText negative>
-                0,3 L
-                <span>
-                  -2.4% <ArrowUpward sx={{ fontSize: 10 }} />{' '}
-                </span>
-              </StyledDashboardOverviewSectionItemText>
-            </StyledDashboardOverviewSectionItem>
+            <StyledDashboardOverviewSectionDataContainer>
+              <StyledDashboardOverviewSectionItem>
+                <StyledDashboardOverviewSectionItemTitle>
+                  Compensation Amount
+                </StyledDashboardOverviewSectionItemTitle>
+                <StyledDashboardOverviewSectionItemText>
+                  48 DEK
+                  <span>
+                    +2.5% <ArrowUpward sx={{ fontSize: 10 }} />{' '}
+                  </span>
+                </StyledDashboardOverviewSectionItemText>
+              </StyledDashboardOverviewSectionItem>
+              <StyledDashboardOverviewSectionItem>
+                <StyledDashboardOverviewSectionItemTitle>
+                  CO2 Compensated
+                </StyledDashboardOverviewSectionItemTitle>
+                <StyledDashboardOverviewSectionItemText negative>
+                  0,3 L
+                  <span>
+                    -2.4% <ArrowUpward sx={{ fontSize: 10 }} />{' '}
+                  </span>
+                </StyledDashboardOverviewSectionItemText>
+              </StyledDashboardOverviewSectionItem>
+            </StyledDashboardOverviewSectionDataContainer>
           </StyledDasboardOverviewSection>
 
           <StyledDashboardChartSection>

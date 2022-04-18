@@ -23,19 +23,38 @@ export const StyledDasboardOverviewSection = styled.div`
   background-color: ${theme.palette.common.white};
   border-radius: ${toRem('10px')};
   padding: ${toRem('10px')} ${toRem('20px')};
-  display: flex;
-  align-items: center;
   max-width: calc(100vw - 60px);
   margin-bottom: ${toRem('28px')};
+  display: flex;
+  align-items: center;
+
+  ${theme.breakpoints.down('md')} {
+    flex-direction: column;
+  }
 `
 
 export const StyledDashboardOverviewSectionMainTitle = styled.h3`
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${toRem('20px')};
-  line-height: ${toRem('26px')};
+  font-size: ${toRem('18px')};
+  line-height: ${toRem('24px')};
   color: ${theme.palette.primary.main};
   flex: 1;
+
+  ${theme.breakpoints.down('md')} {
+    margin-bottom: ${toRem('16px')};
+  }
+`
+
+export const StyledDashboardOverviewSectionDataContainer = styled.div`
+  display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
+
+  ${theme.breakpoints.down('md')} {
+    width: 100%;
+    justify-content: center;
+  }
 `
 
 export const StyledDashboardOverviewSectionItem = styled.div`
