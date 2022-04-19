@@ -5,8 +5,9 @@ export const StyledContainedInputField = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
     borderRadius: 10,
     position: 'relative',
-    backgroundColor: '#FFF',
+    backgroundColor: '#F7F7F7',
     border: '1px solid #1DAF9E',
+    borderColor: 'transparent',
     fontSize: 16,
     lineHeight: 20,
     width: '100%',
@@ -27,8 +28,12 @@ export const StyledContainedInputField = styled(InputBase)(({ theme }) => ({
       '"Segoe UI Symbol"',
     ].join(','),
     '&:focus': {
-      backgroundColor: '#F7F7F7',
-      borderColor: 'transparent',
+      backgroundColor: '#FFF',
+      borderColor: theme.palette.primary.light,
+    },
+    '&::placeholder': {
+      color: '#13253d',
+      opacity: 1,
     },
   },
 }))

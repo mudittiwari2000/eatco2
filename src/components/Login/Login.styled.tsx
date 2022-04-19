@@ -14,8 +14,7 @@ export const StyledLoginLeftView = styled.div`
   display: flex;
   flex-direction: column;
   padding: ${rem('22px')} ${rem('38px')};
-  flex-grow: 1;
-  width: ${rem('785px')};
+  flex-basis: 40%;
   position: relative;
   z-index: 2;
   background-color: ${theme.palette.common.white};
@@ -123,5 +122,5 @@ export const StyledLoginRightView = styled('div', {
   background-image: url(${(props) => props.bgImg});
   background-position: top right;
   max-height: 100vh;
-  width: 100%;
+  flex-basis: 60%;
 `

@@ -1,12 +1,12 @@
 import { makeAutoObservable, runInAction } from 'mobx'
 
 export type BusinessType = 'Restaurant' | 'Caterer' | 'Private Company'
-export type Country = 'DA' | 'SE' | ''
+export type Country = 'DA' | 'SE'
 
 export default class RegisterStore {
   email = ''
   businessType: BusinessType = 'Restaurant'
-  country: Country = ''
+  country: Country = 'DA'
   cvr = ''
   registeredBusinessName = ''
   streetName = ''

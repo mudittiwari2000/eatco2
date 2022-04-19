@@ -90,16 +90,17 @@ export const StyledBusinessFormStepIconContainer = styled('div', {
 }>`
   display: flex;
   width: max-content;
-  background: #fff;
+  background: #1daf9e;
   border-radius: 50%;
   border: 2px solid #1daf9e;
-  padding: ${rem('14px')} ${rem('16px')} ${rem('14px')} ${rem('16px')};
+  padding: ${rem('16px')};
   box-shadow: 0px 3px 10px #318fb51a;
   z-index: 2;
 
   ${(props) =>
     props.inactive &&
     css`
+      background-color: ${theme.palette.common.white};
       border-color: ${theme.palette.grey[300]};
     `}
 `

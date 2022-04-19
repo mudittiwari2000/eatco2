@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, InputBase, useMediaQuery } from '@mui/material'
 import {
-  StyledBrandLogo,
   StyledRegister,
   StyledRegisterLeftView,
   StyledRegisterLeftViewFieldContainer,
@@ -17,13 +16,15 @@ import {
 import HelpIcon from '@mui/icons-material/HelpOutline'
 import { OutlinedButton, ContainedButton } from '@app/components/Button'
 import theme from '@app/theme'
-import RegisterSelect from '../RegisterSelect'
 import { ContainedInputField } from '../InputField'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { rem } from 'polished'
 import { useStore } from '@app/store'
 import { observer } from 'mobx-react-lite'
+import Image from 'next/image'
+import logo from '@app/../public/static/logo.png'
+import LanguageMenu from '../LanguageMenu/LanguageMenu'
+import { toRem } from '@app/utils'
 
 const Register = () => {
   const { registerStore } = useStore()
@@ -45,7 +46,14 @@ const Register = () => {
     <StyledRegister>
       <StyledRegisterLeftView>
         <StyledRegisterLeftViewLogoContainer>
-          <StyledBrandLogo />
+          <Image
+            quality={100}
+            width={159}
+            height={56}
+            src={logo}
+            placeholder="blur"
+            alt="EATCO2 Logo"
+          />
         </StyledRegisterLeftViewLogoContainer>
         <StyledRegisterLeftViewMainContainer>
           <StyledRegisterLeftViewMainContainerHeader>
@@ -55,13 +63,14 @@ const Register = () => {
             component="div"
             display="flex"
             justifyContent="space-between"
-            alignItems="center"
-            sx={{ width: '100%', mb: rem('48px') }}
+            alignItems="flex-end"
+            sx={{ width: '100%', mb: toRem('48px') }}
           >
             <StyledRegisterLeftViewMainContainerSubHeader>
               Get started for free
             </StyledRegisterLeftViewMainContainerSubHeader>
-            <RegisterSelect />
+            {/* <RegisterSelect /> */}
+            <LanguageMenu />
           </Box>
           <Box
             component="form"
@@ -73,7 +82,7 @@ const Register = () => {
           >
             <StyledRegisterLeftViewFieldContainer>
               <StyledRegisterLeftViewFieldLabel htmlFor="sign-up--email">
-                Create an account*
+                Create an account<span>*</span>
               </StyledRegisterLeftViewFieldLabel>
               <ContainedInputField
                 required

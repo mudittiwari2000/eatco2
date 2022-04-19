@@ -1,4 +1,3 @@
-import BrandLogo from '@app/assets/svg/BrandLogo'
 import theme from '@app/theme'
 import styled from '@emotion/styled'
 import { rem } from 'polished'
@@ -14,8 +13,7 @@ export const StyledRegisterLeftView = styled.div`
   display: flex;
   flex-direction: column;
   padding: ${rem('28px')} ${rem('38px')};
-  flex-grow: 1;
-  width: ${rem('785px')};
+  flex-basis: 40%;
   position: relative;
   z-index: 2;
   background-color: ${theme.palette.common.white};
@@ -25,20 +23,13 @@ export const StyledRegisterLeftViewLogoContainer = styled.div`
   display: flex;
 `
 
-export const StyledBrandLogo = styled(BrandLogo)`
-  &&& {
-    width: 155px;
-    height: 55px;
-  }
-`
-
 export const StyledRegisterLeftViewMainContainer = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: ${rem('470px')};
+  max-width: ${rem('471px')};
   width: 100%;
   margin: 0 auto;
 `
@@ -49,8 +40,8 @@ export const StyledRegisterLeftViewMainContainerHeader = styled.h2`
   margin-bottom: ${rem('10px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${rem('36px')};
-  line-height: ${rem('38px')};
+  font-size: ${rem('45px')};
+  line-height: ${rem('59px')};
   color: ${theme.palette.primary.dark};
   white-space: nowrap;
   text-align: left;
@@ -62,8 +53,8 @@ export const StyledRegisterLeftViewMainContainerSubHeader = styled.h4`
   margin-bottom: ${rem('12px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${rem('24px')};
-  line-height: ${rem('32px')};
+  font-size: ${rem('30px')};
+  line-height: ${rem('40px')};
   color: ${theme.palette.primary.main};
   white-space: nowrap;
   text-align: left;
@@ -83,6 +74,10 @@ export const StyledRegisterLeftViewFieldLabel = styled.label`
   font-size: ${rem('16px')};
   line-height: ${rem('22px')};
   color: #333333;
+
+  span {
+    color: ${theme.palette.primary.light};
+  }
 `
 
 export const StyledRegisterLeftViewLoginText = styled.p`
@@ -119,5 +114,5 @@ export const StyledRegisterRightView = styled('div', {
   background-repeat: no-repeat;
   background-image: url(${(props) => props.bgImg});
   background-position: top right;
-  width: 100%;
+  flex-basis: 60%;
 `

@@ -1,5 +1,4 @@
 import React from 'react'
-import BusinessIcon from '../../assets/svg/BusinessIcon'
 import UserIcon from '@app/assets/svg/UserIcon'
 import { Box, SelectChangeEvent } from '@mui/material'
 import {
@@ -23,6 +22,8 @@ import { useRouter } from 'next/router'
 import type { BusinessType, Country } from '@app/store/registerStore'
 import { useStore } from '@app/store'
 import { observer } from 'mobx-react-lite'
+import BusinessIconWhite from '@app/assets/svg/BusinessIconWhite'
+import { toRem } from '@app/utils'
 
 const BusinessForm = () => {
   const router = useRouter()
@@ -61,7 +62,7 @@ const BusinessForm = () => {
           <StyledBusinessFormStepsContainer>
             <StyledBusinessFormStep position="start">
               <StyledBusinessFormStepIconContainer>
-                <BusinessIcon />
+                <BusinessIconWhite />
               </StyledBusinessFormStepIconContainer>
               <StyledBusinessFormStepText>Business</StyledBusinessFormStepText>
             </StyledBusinessFormStep>
@@ -115,46 +116,42 @@ const BusinessForm = () => {
                 handleChange={handleCountryChange}
               />
             </Box>
-            {!!country && (
-              <Box
-                display="flex"
-                flexDirection="column"
-                sx={{ marginBottom: '30px' }}
-              >
-                <StyledBusinessFormFieldLabel>
-                  {country === 'SE' ? 'Organization Number' : 'CVR'}
-                  <span>*</span>
-                </StyledBusinessFormFieldLabel>
-                <UnderlinedInputField
-                  required
-                  inputProps={{ minLength: 8 }}
-                  placeholder="------"
-                  value={cvr}
-                  onChange={(evt) => setCvr(evt.target.value)}
-                />
-              </Box>
-            )}
-            {!!country && (
-              <Box
-                display="flex"
-                flexDirection="column"
-                sx={{ marginBottom: '30px' }}
-              >
-                <StyledBusinessFormFieldLabel>
-                  Registered Business Name<span>*</span>
-                </StyledBusinessFormFieldLabel>
-                <UnderlinedInputField
-                  required
-                  placeholder="EatCO2"
-                  value={registeredBusinessName}
-                  onChange={(evt) =>
-                    setRegisteredBusinessName(evt.target.value)
-                  }
-                />
-              </Box>
-            )}
+            <Box
+              display="flex"
+              flexDirection="column"
+              sx={{ marginBottom: '30px' }}
+            >
+              <StyledBusinessFormFieldLabel>
+                {country === 'SE' ? 'Organization Number' : 'CVR'}
+                <span>*</span>
+              </StyledBusinessFormFieldLabel>
+              <UnderlinedInputField
+                required
+                inputProps={{ minLength: 8 }}
+                placeholder="------"
+                value={cvr}
+                onChange={(evt) => setCvr(evt.target.value)}
+              />
+            </Box>
+
+            <Box
+              display="flex"
+              flexDirection="column"
+              sx={{ marginBottom: '30px' }}
+            >
+              <StyledBusinessFormFieldLabel>
+                Registered Business Name<span>*</span>
+              </StyledBusinessFormFieldLabel>
+              <UnderlinedInputField
+                required
+                placeholder="EatCO2"
+                value={registeredBusinessName}
+                onChange={(evt) => setRegisteredBusinessName(evt.target.value)}
+              />
+            </Box>
+
             <StyledBusinessFormContinueButton
-              sx={{ marginTop: !!country ? '60px' : '148px' }}
+              sx={{ marginTop: toRem('48px') }}
               type="submit"
             >
               CONTINUE
