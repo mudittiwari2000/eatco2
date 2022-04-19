@@ -1,6 +1,7 @@
 import theme from '@app/theme'
 import { toRem } from '@app/utils'
 import styled from '@emotion/styled'
+import { rem } from 'polished'
 
 export const StyledRegister = styled.div`
   min-height: 100vh;
@@ -12,7 +13,7 @@ export const StyledRegister = styled.div`
 export const StyledRegisterLeftView = styled.div`
   display: flex;
   flex-direction: column;
-  padding: ${toRem('28px')} ${toRem('38px')};
+  padding: ${toRem('22px')} ${toRem('38px')};
   flex-basis: 40%;
   position: relative;
   z-index: 2;
@@ -29,7 +30,7 @@ export const StyledRegisterLeftViewMainContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: ${toRem('471px')};
+  max-width: ${rem('470px')};
   width: 100%;
   margin: 0 auto;
 `

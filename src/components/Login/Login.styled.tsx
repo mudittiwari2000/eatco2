@@ -1,4 +1,3 @@
-import BrandLogo from '@app/assets/svg/BrandLogo'
 import theme from '@app/theme'
 import styled from '@emotion/styled'
 import { rem } from 'polished'
@@ -22,13 +21,6 @@ export const StyledLoginLeftView = styled.div`
 
 export const StyledLoginLeftViewLogoContainer = styled.div`
   display: flex;
-`
-
-export const StyledBrandLogo = styled(BrandLogo)`
-  &&& {
-    width: 155px;
-    height: 55px;
-  }
 `
 
 export const StyledLoginLeftViewMainContainer = styled.div`
