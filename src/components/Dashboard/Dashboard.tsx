@@ -75,9 +75,10 @@ const Dashboard = () => {
             <DashboardChart />
           </StyledDashboardChartSection>
         </Grid>
-        <Grid item xs={12} lg={5}></Grid>
+        <Grid item xs={12} lg={4}></Grid>
       </Grid>
     </StyledDashboard>
   )
 }
+
 export default Dashboard

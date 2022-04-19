@@ -3,7 +3,6 @@ import { toRem } from '@app/utils'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { InputBase } from '@mui/material'
-import { rem } from 'polished'
 
 export const StyledContactForm = styled.div`
   min-height: 100vh;
@@ -20,20 +19,20 @@ export const StyledContactForm = styled.div`
 `
 
 export const StyledContactFormCard = styled.div`
-  max-width: ${rem('709px')};
+  max-width: ${toRem('709px')};
   width: 100%;
-  padding: ${rem('56px')} ${rem('119px')};
+  padding: ${toRem('56px')} ${toRem('119px')};
   background-color: #fff;
   box-shadow: 0px 3px 20px #0000001a;
-  border-radius: ${rem('20px')};
+  border-radius: ${toRem('20px')};
 `
 
 export const StyledContactFormStepsContainer = styled.div`
   position: relative;
   display: flex;
   margin: 0 auto;
-  margin-bottom: ${rem('60px')};
-  padding: ${rem('22px')} 0 ${rem('56px')} 0;
+  margin-bottom: ${toRem('60px')};
+  padding: ${toRem('22px')} 0 ${toRem('56px')} 0;
   max-width: ${toRem('320px')};
   width: 100%;
 `
@@ -42,7 +41,7 @@ export const StyledContactFormLine = styled.div`
   width: 100%;
   height: 20px;
   background: #1daf9e;
-  border-radius: ${rem('30px')};
+  border-radius: ${toRem('30px')};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,10 +60,10 @@ export const StyledContactFormStep = styled('div', {
   ${(props) =>
     props.position === 'start'
       ? css`
-          left: 0;
+          left: -2px;
         `
       : css`
-          right: -2px;
+          right: -10px;
         `}
 `
 
@@ -75,16 +74,17 @@ export const StyledContactFormStepIconContainer = styled('div', {
 }>`
   display: flex;
   width: max-content;
-  background: #fff;
+  background: #1daf9e;
   border-radius: 50%;
   border: 2px solid #1daf9e;
-  padding: ${rem('16px')};
+  padding: ${toRem('16px')};
   box-shadow: 0px 3px 10px #318fb51a;
   z-index: 2;
 
   ${(props) =>
     props.inactive &&
     css`
+      background-color: ${theme.palette.common.white};
       border-color: ${theme.palette.grey[300]};
       cursor: pointer;
     `}
@@ -95,9 +95,12 @@ export const StyledContactFormStepText = styled('p', {
   inactive?: boolean
 }>`
   margin: 0;
-  margin-top: ${rem('11px')};
+  margin-top: ${toRem('11px')};
   text-align: center;
-  font: normal normal 600 18px/23px ${theme.typography.fontFamily};
+  font-family: ${theme.typography.fontFamily};
+  font-weight: 600;
+  font-size: ${toRem('14px')};
+  line-height: ${toRem('18px')};
   color: ${theme.palette.primary.main};
 
   ${(props) =>
@@ -115,7 +118,7 @@ export const StyledContactFormStepsAddress = styled('div', {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 0 ${rem('21px')};
+  padding: 0 ${toRem('21px')};
 
   ${(props) =>
     props.border &&
@@ -136,8 +139,8 @@ export const StyledContactFormStepAddressBox = styled.div`
   display: flex;
   justify-content: space-between;
   background: #1daf9e0d;
-  padding: ${rem('11px')} 0;
-  border-radius: ${rem('10px')};
+  padding: ${toRem('11px')} 0;
+  border-radius: ${toRem('10px')};
 `
 export const StyledContactFormStepAddressInput = styled(InputBase)`
   &&& {

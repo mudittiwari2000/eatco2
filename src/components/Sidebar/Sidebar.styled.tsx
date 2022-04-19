@@ -51,8 +51,8 @@ export const StyledSidebarItemIcon = styled('div', {
   shouldForwardProp: (p) => p !== 'active',
 })<{ active?: boolean }>`
   margin-right: ${toRem('12px')};
-  padding: ${toRem('4px')};
-  border-radius: 4px / 40%;
+  padding: ${toRem('6px')};
+  border-radius: 10px;
   display: flex;
   align-items: center;
   background-color: ${(p) =>

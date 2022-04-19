@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, InputBase, useMediaQuery } from '@mui/material'
 import {
-  StyledBrandLogo,
   StyledLogin,
   StyledLoginLeftView,
   StyledLoginLeftViewFieldContainer,
@@ -20,6 +19,8 @@ import theme from '@app/theme'
 import { ContainedInputField } from '../InputField'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import logo from '@app/../public/static/logo.png'
+import Image from 'next/image'
 
 const Login = () => {
   const router = useRouter()
@@ -34,7 +35,14 @@ const Login = () => {
     <StyledLogin>
       <StyledLoginLeftView>
         <StyledLoginLeftViewLogoContainer>
-          <StyledBrandLogo />
+          <Image
+            quality={100}
+            width={159}
+            height={56}
+            src={logo}
+            placeholder="blur"
+            alt="EATCO2 Logo"
+          />
         </StyledLoginLeftViewLogoContainer>
         <StyledLoginLeftViewMainContainer>
           <StyledLoginLeftViewMainContainerHeader>

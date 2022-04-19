@@ -75,12 +75,8 @@ const CountrySelect = (props: CountrySelectProps) => {
       }}
       sx={{ m: 0 }}
       IconComponent={KeyboardArrowDownIcon}
-      displayEmpty
       {...selectProps}
     >
-      <MenuItem value="">
-        <StyledSelectOptionText disabled>Select Country</StyledSelectOptionText>
-      </MenuItem>
       <MenuItem value={'DA'}>
         <StyledSelectOptionContainer>
           <StyledSelectOptionIconContainer>

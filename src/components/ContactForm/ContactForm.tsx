@@ -15,7 +15,6 @@ import {
 import { ChevronRight, Done } from '@mui/icons-material'
 import Badge, { BadgeProps } from '@mui/material/Badge'
 import { styled } from '@mui/material/styles'
-import UserActiveIcon from '@app/assets/svg/UserActiveIcon'
 import {
   StyledBusinessFormCard,
   StyledBusinessFormCardContent,
@@ -28,6 +27,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn'
 import { useRouter } from 'next/router'
 import { useStore } from '@app/store'
 import { observer } from 'mobx-react-lite'
+import AddressIcon from '@app/assets/svg/AddressIcon'
 
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -91,7 +91,7 @@ const ContactForm = () => {
             </StyledContactFormLine>
             <StyledContactFormStep>
               <StyledContactFormStepIconContainer>
-                <UserActiveIcon />
+                <AddressIcon />
               </StyledContactFormStepIconContainer>
               <StyledContactFormStepText>Address</StyledContactFormStepText>
             </StyledContactFormStep>
@@ -125,6 +125,7 @@ const ContactForm = () => {
                   ZIP Code
                 </StyledContactFormStepAddressLabel>
                 <StyledContactFormStepAddressInput
+                  readOnly
                   type="text"
                   inputMode="numeric"
                   value={registerStore.zip}
@@ -136,6 +137,7 @@ const ContactForm = () => {
                   City
                 </StyledContactFormStepAddressLabel>
                 <StyledContactFormStepAddressInput
+                  readOnly
                   value={registerStore.city}
                   onChange={(evt) => registerStore.setCity(evt.target.value)}
                 />

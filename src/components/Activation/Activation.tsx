@@ -157,6 +157,7 @@ const Activation = () => {
               label="Yes, I would like to receive the newsletter"
               sx={{
                 ...isDisabledSx(codeNotTrue),
+                color: 'primary.dark',
               }}
             />
             <FormControlLabel
@@ -171,6 +172,7 @@ const Activation = () => {
               label="I agree with the Terms and Conditions"
               sx={{
                 ...isDisabledSx(codeNotTrue),
+                color: 'primary.dark',
                 mb: '60px',
               }}
             />
