@@ -1,6 +1,6 @@
 import theme from '@app/theme'
+import { toRem } from '@app/utils'
 import styled from '@emotion/styled'
-import { rem } from 'polished'
 
 export const StyledRegister = styled.div`
   min-height: 100vh;
@@ -12,7 +12,7 @@ export const StyledRegister = styled.div`
 export const StyledRegisterLeftView = styled.div`
   display: flex;
   flex-direction: column;
-  padding: ${rem('28px')} ${rem('38px')};
+  padding: ${toRem('28px')} ${toRem('38px')};
   flex-basis: 40%;
   position: relative;
   z-index: 2;
@@ -29,7 +29,7 @@ export const StyledRegisterLeftViewMainContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: ${rem('471px')};
+  max-width: ${toRem('471px')};
   width: 100%;
   margin: 0 auto;
 `
@@ -37,11 +37,11 @@ export const StyledRegisterLeftViewMainContainer = styled.div`
 export const StyledRegisterLeftViewMainContainerHeader = styled.h2`
   width: 100%;
   margin: 0;
-  margin-bottom: ${rem('10px')};
+  margin-bottom: ${toRem('10px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${rem('45px')};
-  line-height: ${rem('59px')};
+  font-size: ${toRem('45px')};
+  line-height: ${toRem('59px')};
   color: ${theme.palette.primary.dark};
   white-space: nowrap;
   text-align: left;
@@ -50,29 +50,33 @@ export const StyledRegisterLeftViewMainContainerHeader = styled.h2`
 export const StyledRegisterLeftViewMainContainerSubHeader = styled.h4`
   width: 100%;
   margin: 0;
-  margin-bottom: ${rem('12px')};
+  margin-bottom: ${toRem('12px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: bold;
-  font-size: ${rem('30px')};
-  line-height: ${rem('40px')};
+  font-size: ${toRem('30px')};
+  line-height: ${toRem('40px')};
   color: ${theme.palette.primary.main};
   white-space: nowrap;
   text-align: left;
+
+  ${theme.breakpoints.down('md')} {
+    margin-bottom: ${toRem('12px')};
+  }
 `
 
 export const StyledRegisterLeftViewFieldContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: ${rem('46px')};
+  margin-bottom: ${toRem('46px')};
 `
 
 export const StyledRegisterLeftViewFieldLabel = styled.label`
-  margin-bottom: ${rem('6px')};
+  margin-bottom: ${toRem('6px')};
   font-family: ${theme.typography.fontFamily};
   font-weight: 600;
-  font-size: ${rem('16px')};
-  line-height: ${rem('22px')};
+  font-size: ${toRem('16px')};
+  line-height: ${toRem('22px')};
   color: #333333;
 
   span {
@@ -83,8 +87,8 @@ export const StyledRegisterLeftViewFieldLabel = styled.label`
 export const StyledRegisterLeftViewLoginText = styled.p`
   color: #333333;
   font-family: ${theme.typography.fontFamily};
-  font-size: ${rem('16px')};
-  line-height: ${rem('20px')};
+  font-size: ${toRem('16px')};
+  line-height: ${toRem('20px')};
   font-weight: normal;
   text-align: left;
   width: 100%;

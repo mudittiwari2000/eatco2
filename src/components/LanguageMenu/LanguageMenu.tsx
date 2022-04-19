@@ -9,7 +9,7 @@ import daLang from '@app/../public/static/register--da-lang.png'
 import seLang from '@app/../public/static/register--se-lang.png'
 import Image, { StaticImageData } from 'next/image'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import { Fade, MenuItem } from '@mui/material'
+import { Collapse, MenuItem } from '@mui/material'
 
 const langMap: Record<string, StaticImageData> = {
   en: enLang,
@@ -37,13 +37,12 @@ const LanguageMenu = () => {
   }
 
   return (
-    <div>
+    <React.Fragment>
       <StyledLanguageMenu
         aria-controls={open ? 'language-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
-        onMouseOver={handleClick}
-        key={language}
+        onClick={handleClick}
       >
         <Image
           src={langMap[language]}
@@ -65,7 +64,7 @@ const LanguageMenu = () => {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        TransitionComponent={Fade}
+        TransitionComponent={Collapse}
       >
         <MenuItem onClick={() => handleMenuItemClick('en')}>
           <Image src={enLang} width={30} height={21} alt="EN lang" />
@@ -80,7 +79,7 @@ const LanguageMenu = () => {
           <span>SE</span>
         </MenuItem>
       </StyledMenu>
-    </div>
+    </React.Fragment>
   )
 }
 

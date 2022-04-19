@@ -8,8 +8,8 @@ export const StyledContainedInputField = styled(InputBase)(({ theme }) => ({
     backgroundColor: '#F7F7F7',
     border: '1px solid #1DAF9E',
     borderColor: 'transparent',
-    fontSize: 16,
-    lineHeight: 20,
+    fontSize: 14,
+    lineHeight: 17,
     width: '100%',
     padding: '12px 18px',
     transition: theme.transitions.create(['border-color', 'background-color']),
@@ -39,7 +39,7 @@ export const StyledContainedInputField = styled(InputBase)(({ theme }) => ({
 }))
 
 export const StyledUnderlinedInputField = styled(InputBase)(({ theme }) => ({
-  border: '1px solid #1DAF9E',
+  border: '1px solid #035D62',
   borderWidth: 0,
   borderBottomWidth: '1px',
   backgroundColor: '#FFF',
@@ -51,8 +51,8 @@ export const StyledUnderlinedInputField = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
     borderRadius: 0,
     position: 'relative',
-    fontSize: 16,
-    lineHeight: 19,
+    fontSize: 14,
+    lineHeight: 17,
     width: '100%',
     padding: '12px 16px',
     color: '#13253d',

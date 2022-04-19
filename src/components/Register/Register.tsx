@@ -62,6 +62,7 @@ const Register = () => {
           <Box
             component="div"
             display="flex"
+            flexDirection={isMdUp ? 'row' : 'column'}
             justifyContent="space-between"
             alignItems="flex-end"
             sx={{ width: '100%', mb: toRem('48px') }}
@@ -69,7 +70,6 @@ const Register = () => {
             <StyledRegisterLeftViewMainContainerSubHeader>
               Get started for free
             </StyledRegisterLeftViewMainContainerSubHeader>
-            {/* <RegisterSelect /> */}
             <LanguageMenu />
           </Box>
           <Box

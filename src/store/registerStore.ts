@@ -10,8 +10,8 @@ export default class RegisterStore {
   cvr = ''
   registeredBusinessName = ''
   streetName = ''
-  zip = ''
-  city = ''
+  zip = '12345'
+  city = 'Copenhagen'
 
   setEmail = (email: string) => {
     runInAction(() => {

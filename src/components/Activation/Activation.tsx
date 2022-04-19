@@ -9,17 +9,10 @@ import {
 } from './Activation.styled'
 import PinInput from '../PinInput'
 import { Code } from '../PinInput/PinInput'
-import { Box, Checkbox, debounce, FormControlLabel } from '@mui/material'
-import { StyledBusinessFormFieldLabel } from '../BusinessForm/BusinessForm.styled'
-import { UnderlinedInputField } from '../InputField/InputField'
-import { useRouter } from 'next/router'
+import { Box } from '@mui/material'
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined'
 import theme from '@app/theme'
-
-const isDisabledSx = (disabled: boolean) => ({
-  opacity: disabled ? 0.3 : 1,
-  pointerEvents: disabled ? 'none' : 'all',
-})
+import { useRouter } from 'next/router'
 
 const Activation = () => {
   const router = useRouter()
@@ -33,20 +26,11 @@ const Activation = () => {
   })
   const [codeSuccess, setCodeSuccess] = React.useState<boolean | null>(null)
 
-  const handleFormSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
-    evt.preventDefault()
-    router.push('/dashboard')
-  }
-
   const handleCodeChange = (
     otpNumber: string,
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setCode((prev) => {
-      const newCode = { ...prev, [otpNumber]: event.target.value }
-      checkCode(newCode)
-      return newCode
-    })
+    setCode((prev) => ({ ...prev, [otpNumber]: event.target.value }))
   }
 
   const handleCodeFocus = (evt: React.KeyboardEvent<HTMLInputElement>) => {
@@ -70,19 +54,16 @@ const Activation = () => {
     }
   }
 
-  const checkCode = debounce(
-    (code: Code) => setCodeSuccess(Object.values(code).join('') === '111111'),
-    600
-  )
-
-  const codeNotTrue = codeSuccess !== true
+  const checkCode = (code: Code) =>
+    setCodeSuccess(Object.values(code).join('') === '111111')
+  600
 
   return (
     <StyledActivation>
       <StyledActivationCard>
         <StyledActivationCardContent>
           <StyledActivationCardHeader>
-            {codeSuccess ? 'Activation Successful' : 'Activation Code'}
+            Activation code
           </StyledActivationCardHeader>
           {codeSuccess ? (
             <Box
@@ -107,84 +88,13 @@ const Activation = () => {
               success={codeSuccess}
             />
           )}
-          <Box
-            component="form"
-            display="flex"
-            flexDirection="column"
-            justifyContent="flex-start"
-            onSubmit={handleFormSubmit}
+          <StyledActivationNextButton
+            onClick={() =>
+              !codeSuccess ? checkCode(code) : router.push('/register/password')
+            }
           >
-            <Box
-              display="flex"
-              flexDirection="column"
-              sx={{ marginBottom: '30px' }}
-            >
-              <StyledBusinessFormFieldLabel isDisabled={codeNotTrue}>
-                Password*
-              </StyledBusinessFormFieldLabel>
-              <UnderlinedInputField
-                required
-                inputProps={{ minLength: 8, maxLength: 20 }}
-                type="password"
-                placeholder="********"
-                sx={{
-                  ...isDisabledSx(codeNotTrue),
-                }}
-              />
-            </Box>
-            <Box
-              display="flex"
-              flexDirection="column"
-              sx={{ marginBottom: '30px' }}
-            >
-              <StyledBusinessFormFieldLabel isDisabled={codeNotTrue}>
-                Confirm Password*
-              </StyledBusinessFormFieldLabel>
-              <UnderlinedInputField
-                required
-                inputProps={{ minLength: 8, maxLength: 20 }}
-                type="password"
-                placeholder="********"
-                sx={{
-                  ...isDisabledSx(codeNotTrue),
-                }}
-              />
-            </Box>
-            <FormControlLabel
-              control={
-                <Checkbox sx={{ color: 'primary.light' }} defaultChecked />
-              }
-              label="Yes, I would like to receive the newsletter"
-              sx={{
-                ...isDisabledSx(codeNotTrue),
-                color: 'primary.dark',
-              }}
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  sx={{
-                    color: 'primary.light',
-                  }}
-                  required
-                />
-              }
-              label="I agree with the Terms and Conditions"
-              sx={{
-                ...isDisabledSx(codeNotTrue),
-                color: 'primary.dark',
-                mb: '60px',
-              }}
-            />
-            <StyledActivationNextButton
-              sx={{
-                ...isDisabledSx(codeNotTrue),
-              }}
-              type="submit"
-            >
-              FINISH
-            </StyledActivationNextButton>
-          </Box>
+            {!codeSuccess ? 'SUBMIT' : 'CONTINUE'}
+          </StyledActivationNextButton>
         </StyledActivationCardContent>
       </StyledActivationCard>
     </StyledActivation>

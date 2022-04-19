@@ -10,6 +10,7 @@ export const StyledLanguageMenu = styled.div`
   border: 1px solid ${theme.palette.primary.main};
   display: flex;
   align-items: center;
+  cursor: pointer;
 `
 
 export const StyledLanguageMenuText = styled.p`
@@ -28,11 +29,11 @@ export const StyledMenu = muiStyled((props: MenuProps) => (
     elevation={0}
     anchorOrigin={{
       vertical: 'bottom',
-      horizontal: 'right',
+      horizontal: 'center',
     }}
     transformOrigin={{
       vertical: 'top',
-      horizontal: 'right',
+      horizontal: 'center',
     }}
     {...props}
   />
@@ -42,14 +43,19 @@ export const StyledMenu = muiStyled((props: MenuProps) => (
     marginTop: toRem('5px'),
     color: theme.palette.primary.dark,
     boxShadow: '0px 3px 20px #0000001A',
+    minWidth: '120px',
     '& .MuiMenu-list': {
-      padding: '10px 20px 10px 20px',
+      padding: '10px',
+      paddingRight: '30px',
     },
     '& .MuiMenuItem-root': {
       padding: '10px',
+      display: 'flex',
+      justifyContent: 'center',
+      marginLeft: '-8px',
       '& span': {
         color: theme.palette.primary.dark,
-        marginLeft: toRem('15px'),
+        marginLeft: toRem('10px'),
         fontFamily: theme.typography.fontFamily,
         fontWeight: 'normal',
         fontSize: toRem('14px'),
